@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (C) 2026 Abhishek Sengar -->
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinetix Studio — Visual CSS Animation Orchestrator | Atelier</title>
+  <meta name="description" content="Design multi-breakpoint CSS keyframe animations on a visual node graph, sync parallel sequences, tune easing curves and export clean CSS. Free, in the browser." />
+
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="canonical" href="https://csslib.github.io/site/atelier/css-animation-generator/" />
+  <meta property="og:url" content="https://csslib.github.io/site/atelier/css-animation-generator/" />
+  <link rel="icon" href="../suite/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../suite/styles/tokens.css" />
+  <link rel="stylesheet" href="../suite/styles/reset.css" />
+  <link rel="stylesheet" href="../suite/styles/utilities.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-states.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-breakpoints.css" />
+  <link rel="stylesheet" href="../suite/suite.css" />
+  <link rel="stylesheet" href="../suite/styles/controls.css" />
+  <script src="../suite/suite.js" data-tool="kinetix"></script>
+  <script type="importmap">
+    { "imports": { "lit": "../../vendor/lit-core-3.3.3.min.js" } }
+  </script>
+</head>
+<body class="min-h-screen lg:h-screen lg:overflow-hidden bg-slate-50 text-slate-800 selection:bg-indigo-100 selection:text-indigo-900">
+  <h1 class="suite-visually-hidden">Kinetix Studio — visual CSS animation orchestrator</h1>
+
+  <kinetix-studio></kinetix-studio>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+    <section class="tool-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">csslib</a><span aria-hidden="true">/</span><a href="/site/atelier/">Atelier</a><span aria-hidden="true">/</span><span aria-current="page">IntrinsicFlow</span>
+        </nav>
+        <div class="tool-hero-grid">
+          <div class="tool-hero-copy">
+            <span class="shape-tile is-large"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+            <p class="tool-kind">CSS Grid &amp; Flexbox layout builder · an Atelier studio</p>
+            <h1>IntrinsicFlow</h1>
+            <p class="tool-tagline">Build responsive page layouts that adapt without media queries.</p>
+            <p class="tool-summary">IntrinsicFlow builds page structure visually. Arrange semantic regions, give each one an intrinsic behaviour such as an auto-fit grid or a sidebar switcher, pin headers and sidebars, and export clean HTML and CSS.</p>
+            <div class="button-row">
+              <a class="button is-tool" href="/site/atelier/css-layout-builder/">Open IntrinsicFlow <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="button is-light" href="#features">See features</a>
+            </div>
+            <ul class="tool-facts">
+              <li>Free &amp; open source</li>
+              <li>Runs in your browser</li>
+              <li>Exports plain CSS</li>
+            </ul>
+          </div>
+          <a class="tool-shot" href="/site/atelier/css-layout-builder/" aria-label="Open IntrinsicFlow">
+            <span class="tool-shot-bar"><span></span><span></span><span></span><small>atelier/css-layout-builder</small></span>
+            <img src="/site/atelier/studios/css-layout-builder/preview.jpg" alt="IntrinsicFlow interface: CSS Grid & Flexbox layout builder" width="1440" height="900" fetchpriority="high" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Features</span>
+          <h2 id="features-title">What you can do in IntrinsicFlow.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature card">
+            <span class="feature-number">01</span>
+            <h3>Visual structure tree</h3>
+            <p>Build the page from semantic elements such as header, nav, main, aside, section, article and footer, nested like a real document.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">02</span>
+            <h3>Intrinsic layout patterns</h3>
+            <p>Auto-fit grids, sidebar switchers, row clusters, stacks, 12-column bento grids and multi-column splits that adapt on their own.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">03</span>
+            <h3>Sticky &amp; fixed chrome</h3>
+            <p>Pin headers, sidebars and footers with offsets, layering and backdrop blur, then scroll inside the preview to test them.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">04</span>
+            <h3>Fluid space &amp; type</h3>
+            <p>Gaps, padding and type sizes use <code>clamp()</code>-based fluid scales that grow smoothly with the viewport.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">05</span>
+            <h3>Live viewport</h3>
+            <p>Drag the preview from phone to wide desktop and watch every region reflow in real time.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">06</span>
+            <h3>Semantic export</h3>
+            <p>Export clean semantic HTML with matching CSS, or a single self-contained HTML file.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">How it works</span>
+          <h2 id="steps-title">Four steps to production CSS.</h2>
+        </div>
+        <ol class="steps tool-steps"><li class="card"><h3>Choose a preset</h3><p>Start from an app shell, article or bento grid.</p></li><li class="card"><h3>Shape the structure</h3><p>Add, nest and name semantic regions.</p></li><li class="card"><h3>Pick behaviours</h3><p>Set grids, switchers, gaps and sticky chrome.</p></li><li class="card"><h3>Export</h3><p>Copy semantic HTML and CSS, or one file.</p></li></ol>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="export-title">
+      <div class="wrap export-grid">
+        <div class="export-copy">
+          <span class="section-kicker">The output</span>
+          <h2 id="export-title">Layouts that respond to their content</h2>
+          <p>IntrinsicFlow favours intrinsic CSS, such as flex-basis switchers, auto-fit grids and fluid <code>clamp()</code> spacing, so most layouts need zero media queries.</p>
+          <h3>Great for</h3>
+          <ul class="chip-list"><li>App shells</li><li>Editorial articles</li><li>Dashboards &amp; bento grids</li><li>Landing pages</li></ul>
+        </div>
+        <div class="code-window">
+              <div class="code-window-bar"><span></span><span></span><span></span><small>Example export</small></div>
+              <pre><code>.app-shell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 0.8rem + 1vw, 1.75rem);
+}
+
+.app-shell &gt; .sidebar {
+  flex-basis: 220px;
+  flex-grow: 1;
+  position: sticky;
+  top: 0;
+}
+
+.app-shell &gt; .main {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 62%;
+}</code></pre>
+            </div>
+      </div>
+    </section>
+
+    <section class="section is-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ready to try IntrinsicFlow?</h2>
+          <p>It opens instantly in your browser. Nothing to install, nothing to sign up for.</p>
+          <div class="button-row">
+            <a class="button is-light" href="/site/atelier/css-layout-builder/">Open IntrinsicFlow <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="related-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="related-title">Explore the other Atelier studios</h2>
+        </div>
+        <div class="related-grid">
+          <a class="related-card card is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+            <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+            <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-specimen" href="/site/atelier/studios/css-property-playground/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+            <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>

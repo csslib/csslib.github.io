@@ -1,0 +1,139 @@
+    <section class="tool-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">csslib</a><span aria-hidden="true">/</span><a href="/site/atelier/">Atelier</a><span aria-hidden="true">/</span><span aria-current="page">ChromaFlow</span>
+        </nav>
+        <div class="tool-hero-grid">
+          <div class="tool-hero-copy">
+            <span class="shape-tile is-large"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+            <p class="tool-kind">CSS gradient generator · an Atelier studio</p>
+            <h1>ChromaFlow</h1>
+            <p class="tool-tagline">Paint rich mesh-style gradients with perceptual OKLCH colour.</p>
+            <p class="tool-summary">ChromaFlow lets you paint a background instead of describing it. Drop colour emitters on a canvas, shape how far each one reaches, and export gradients that blend in OKLCH, so colours stay vivid instead of turning muddy grey.</p>
+            <div class="button-row">
+              <a class="button is-tool" href="/site/atelier/css-gradient-generator/">Open ChromaFlow <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="button is-light" href="#features">See features</a>
+            </div>
+            <ul class="tool-facts">
+              <li>Free &amp; open source</li>
+              <li>Runs in your browser</li>
+              <li>Exports plain CSS</li>
+            </ul>
+          </div>
+          <a class="tool-shot" href="/site/atelier/css-gradient-generator/" aria-label="Open ChromaFlow">
+            <span class="tool-shot-bar"><span></span><span></span><span></span><small>atelier/css-gradient-generator</small></span>
+            <img src="/site/atelier/studios/css-gradient-generator/preview.jpg" alt="ChromaFlow interface: CSS gradient generator" width="1440" height="900" fetchpriority="high" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Features</span>
+          <h2 id="features-title">What you can do in ChromaFlow.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature card">
+            <span class="feature-number">01</span>
+            <h3>Spatial colour emitters</h3>
+            <p>Place colour points anywhere on the canvas. Each one radiates its own field instead of sitting on a straight gradient line.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">02</span>
+            <h3>Shape every field</h3>
+            <p>Radial circles, boxes, polygons, directional beams, hollow rings and conic sectors, each with its own reach, core and angle.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">03</span>
+            <h3>Perceptual OKLCH blending</h3>
+            <p>Colours mix in OKLCH with a chroma bridge, so blends stay vivid where sRGB turns grey. Hold a button to compare the two.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">04</span>
+            <h3>Falloff curves</h3>
+            <p>Decide how each colour fades with stepped or Bézier curves, previewed on a live centre-to-edge track.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">05</span>
+            <h3>Harmonies &amp; arrangements</h3>
+            <p>Recolour every emitter with analogous, triadic, split-complement or golden-angle harmonies, and arrange them in orbits, grids, waves or spirals.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">06</span>
+            <h3>Grain, legibility &amp; export</h3>
+            <p>Add film grain, check text contrast on a glass card, then export CSS, custom properties, a Tailwind snippet or design tokens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">How it works</span>
+          <h2 id="steps-title">Four steps to production CSS.</h2>
+        </div>
+        <ol class="steps tool-steps"><li class="card"><h3>Start from a preset</h3><p>Pick a hero mesh, wallpaper or spotlight to remix.</p></li><li class="card"><h3>Place &amp; shape</h3><p>Drag emitters, set their shape, reach and falloff.</p></li><li class="card"><h3>Blend &amp; finish</h3><p>Choose colour harmonies, grain and blend modes.</p></li><li class="card"><h3>Export</h3><p>Copy CSS, custom properties, Tailwind or tokens.</p></li></ol>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="export-title">
+      <div class="wrap export-grid">
+        <div class="export-copy">
+          <span class="section-kicker">The output</span>
+          <h2 id="export-title">One element, many layered gradients</h2>
+          <p>Every emitter becomes a gradient layer on a single element, with OKLCH colours and a solid fallback. No images, no canvas and no JavaScript in your page.</p>
+          <h3>Great for</h3>
+          <ul class="chip-list"><li>Hero backgrounds</li><li>App wallpapers</li><li>Glass &amp; card surfaces</li><li>Brand gradients</li></ul>
+        </div>
+        <div class="code-window">
+              <div class="code-window-bar"><span></span><span></span><span></span><small>Example export</small></div>
+              <pre><code>.orchestrated-gradient {
+  background-color: #0a0d1d;
+  background-image:
+    radial-gradient(78% 64% at 22% 28%, oklch(62% 0.24 285), oklch(62% 0.24 285 / 0) 100%),
+    radial-gradient(74% 70% at 76% 26%, oklch(66% 0.25 5), oklch(66% 0.25 5 / 0) 100%),
+    radial-gradient(76% 72% at 28% 74%, oklch(78% 0.15 210), oklch(78% 0.15 210 / 0) 100%);
+}</code></pre>
+            </div>
+      </div>
+    </section>
+
+    <section class="section is-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ready to try ChromaFlow?</h2>
+          <p>It opens instantly in your browser. Nothing to install, nothing to sign up for.</p>
+          <div class="button-row">
+            <a class="button is-light" href="/site/atelier/css-gradient-generator/">Open ChromaFlow <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="related-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="related-title">Explore the other Atelier studios</h2>
+        </div>
+        <div class="related-grid">
+          <a class="related-card card is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+            <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-specimen" href="/site/atelier/studios/css-property-playground/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+            <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+            <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>

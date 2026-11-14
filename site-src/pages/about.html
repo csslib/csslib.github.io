@@ -1,0 +1,38 @@
+    <section class="about-hero">
+      <span class="section-kicker">About</span>
+      <h1>A home for open-source CSS projects.</h1>
+      <p class="about-lead">csslib collects free tools and libraries that make modern CSS easier to see, learn and ship. Every project runs in the browser with nothing to install, and every one hands back plain code you can paste anywhere.</p>
+    </section>
+
+    <div class="about-layout">
+      <aside class="about-profile card" aria-labelledby="author-heading">
+        <span class="author-photo" data-initials="AS"><img src="/site/media/author.jpg" alt="Abhishek Sengar" width="88" height="88"></span>
+        <h2 id="author-heading" class="author-name">Abhishek Sengar</h2>
+        <p class="author-role">Builds Android apps, WebGPU experiences and backend systems on Linux and macOS. Picks Java, Go or Python to fit the task, tuned for performance and usability, and writes tutorials.</p>
+        <ul class="author-links">
+          <li><a href="https://github.com/monad-one" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/abhishek-sengar" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.6-2.64-1.62 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg>LinkedIn</a></li>
+          <li><button class="author-email" type="button" data-email-user="i.edu" data-email-domain="outlook.com" title="Send an email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.3V17h16V7.3l-8 5.6-8-5.6ZM18.6 7H5.4L12 11.6 18.6 7Z"/></svg><span class="author-email-text">Email</span></button></li>
+        </ul>
+        <p class="about-note">The email address is shown partly hidden to keep it away from spam bots. Selecting it opens your mail app with the full address.</p>
+      </aside>
+
+      <article class="about-article">
+        <h2 id="projects">The projects</h2>
+        <ul class="about-tools">
+          <li class="is-intrinsic"><span class="shape-tile"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="rgb(var(--kinetix-500-rgb))"/><path d="M22.4 3.6c3.3-.2 6 2 6.1 5 .1 3.6-2.6 6.9-6.3 7.1-3.1.2-6-2-6.1-5-.1-3.4 3-6.9 6.3-7.1Z" fill="rgb(var(--chromaflow-500-rgb))"/><rect x="4" y="18" width="12" height="11" fill="rgb(var(--specimen-500-rgb))"/><path d="M22.5 17.5 29 29H16Z" fill="rgb(var(--intrinsicflow-500-rgb))"/></svg></span><span><a href="/site/atelier/">Atelier</a>, four visual CSS studios that turn motion, colour, form and layout into hands-on tools.
+            <ul class="about-sublist"><li><a href="/site/atelier/studios/css-animation-generator/">Kinetix Studio</a> — CSS animation generator</li><li><a href="/site/atelier/studios/css-gradient-generator/">ChromaFlow</a> — CSS gradient generator</li><li><a href="/site/atelier/studios/css-property-playground/">Specimen Lab</a> — CSS property playground</li><li><a href="/site/atelier/studios/css-layout-builder/">IntrinsicFlow</a> — CSS Grid &amp; Flexbox layout builder</li></ul></span></li>
+          <li class="is-vektor"><span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span><a href="/site/vektor/">Vektor.css</a>, an independent charting library that draws bar, radar, heatmap, donut, gauge, funnel and box-plot charts in pure CSS.</span></li>
+        </ul>
+        <p class="about-more">More projects will join csslib over time.</p>
+
+        <h2 id="approach">How the projects are made</h2>
+        <p>The pages are plain HTML and CSS served as static files, with small <a href="https://lit.dev" target="_blank" rel="noopener">Lit</a> web components where a tool needs interaction. There is no build step and no account, and nothing you design is uploaded: every tool works on your own device and only gives you code to copy.</p>
+
+        <h2 id="license">Open source</h2>
+        <p>Every csslib project is released under the <a href="/LICENSE">MIT License</a>. Use it, change it and ship it in your own work.</p>
+
+        <h2 id="contact">Get in touch</h2>
+        <p>Questions, bug reports and ideas for new projects are all welcome. Reach out on <a href="https://www.linkedin.com/in/abhishek-sengar" target="_blank" rel="noopener me">LinkedIn</a> or <a href="https://github.com/monad-one" target="_blank" rel="noopener me">GitHub</a>, or use the email button.</p>
+      </article>
+    </div>

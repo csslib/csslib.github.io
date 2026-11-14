@@ -1,0 +1,561 @@
+{
+  "pages": [
+    {
+      "path": "",
+      "source": "home",
+      "section": "home",
+      "title": "csslib — Free, Open-Source CSS Projects: Atelier Studios & Vektor.css",
+      "description": "csslib is a collection of free, MIT-licensed CSS projects: Atelier, four visual studios for CSS animation, gradients, properties and layout, and Vektor.css, a charting library in pure CSS.",
+      "og_type": "website",
+      "stylesheets": [
+        "/vektor-1.0.0.css",
+        "/site/styles/home.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "csslib",
+            "url": "https://csslib.github.io/",
+            "description": "A collection of free, open-source CSS projects: the Atelier visual CSS studios and the Vektor.css charting library."
+          },
+          {
+            "@type": "ItemList",
+            "name": "csslib projects",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Atelier",
+                  "url": "https://csslib.github.io/site/atelier/",
+                  "applicationCategory": "DesignApplication",
+                  "operatingSystem": "Web browser",
+                  "description": "Four visual CSS studios for animation, gradients, properties and layout."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "SoftwareSourceCode",
+                  "name": "Vektor.css",
+                  "url": "https://csslib.github.io/site/vektor/",
+                  "version": "1.0.0",
+                  "programmingLanguage": "CSS",
+                  "description": "A charting library written in pure, native CSS."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is csslib?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "csslib is a home for free, open-source CSS projects. Each project is independent: use the visual studios in Atelier, drop Vektor.css into a page, or take just the parts you need."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is everything free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every project is released under the MIT License, with no sign-up and no paid tier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a build step or framework?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The studios run in your browser and export plain CSS, and the libraries are single stylesheets you link from any page."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is coming next?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "More studios, libraries and experiments built on modern native CSS. Follow along on GitHub."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "site/about/",
+      "source": "about",
+      "section": "about",
+      "title": "About csslib and Abhishek Sengar | Open-Source CSS Projects",
+      "description": "About csslib, a collection of free, open-source CSS projects including the Atelier visual CSS studios and the Vektor.css charting library, and its maker Abhishek Sengar.",
+      "og_type": "profile",
+      "main_class": "wrap about",
+      "stylesheets": [
+        "/site/styles/about.css"
+      ],
+      "body_scripts": [
+        "/site/scripts/about-contact.js"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "About csslib and Abhishek Sengar",
+        "url": "https://csslib.github.io/site/about/",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Abhishek Sengar",
+          "description": "Builds Android apps, WebGPU experiences and backend systems on Linux and macOS. Picks Java, Go or Python to fit the task, tuned for performance and usability, and writes tutorials.",
+          "sameAs": [
+            "https://www.linkedin.com/in/abhishek-sengar",
+            "https://github.com/monad-one"
+          ],
+          "knowsAbout": [
+            "CSS",
+            "CSS animation",
+            "CSS gradients",
+            "CSS Grid",
+            "Flexbox",
+            "Data visualisation",
+            "Web components",
+            "WebGPU",
+            "Android",
+            "JavaScript",
+            "Java",
+            "Go",
+            "Python"
+          ]
+        }
+      }
+    },
+    {
+      "path": "site/atelier/",
+      "source": "atelier",
+      "section": "atelier",
+      "title": "Atelier — Free Visual CSS Studios for Animation, Gradients, Properties & Layout | csslib",
+      "description": "Atelier is a free suite of four visual CSS studios: animate with Kinetix, paint OKLCH gradients with ChromaFlow, explore properties in Specimen Lab and build layouts in IntrinsicFlow. A csslib project.",
+      "og_type": "website",
+      "stylesheets": [
+        "/site/styles/home.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ItemList",
+            "name": "Atelier visual CSS studios",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Kinetix Studio",
+                  "url": "https://csslib.github.io/site/atelier/studios/css-animation-generator/",
+                  "applicationCategory": "DesignApplication",
+                  "operatingSystem": "Web browser",
+                  "description": "Choreograph responsive CSS animations on a visual node graph.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "ChromaFlow",
+                  "url": "https://csslib.github.io/site/atelier/studios/css-gradient-generator/",
+                  "applicationCategory": "DesignApplication",
+                  "operatingSystem": "Web browser",
+                  "description": "Paint rich mesh-style gradients with perceptual OKLCH colour.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Specimen Lab",
+                  "url": "https://csslib.github.io/site/atelier/studios/css-property-playground/",
+                  "applicationCategory": "DesignApplication",
+                  "operatingSystem": "Web browser",
+                  "description": "Put any visual CSS property under the microscope.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "IntrinsicFlow",
+                  "url": "https://csslib.github.io/site/atelier/studios/css-layout-builder/",
+                  "applicationCategory": "DesignApplication",
+                  "operatingSystem": "Web browser",
+                  "description": "Build responsive page layouts that adapt without media queries.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Atelier free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every studio is free and open source under the MIT License. There is no sign-up and no paid tier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to install anything?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Each studio opens straight in your browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do the studios export?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Plain, framework-free CSS (and semantic HTML for layouts) that you can paste into any project, framework or design system."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my work uploaded anywhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Everything happens on your own device; the studios only hand you code to copy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which browsers are supported?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Current versions of Chrome, Edge, Safari and Firefox. The studios are designed for desktop screens and adapt down to tablets and phones."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Atelier relate to csslib?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Atelier is one of the projects in csslib, a collection of open-source CSS projects that also includes the Vektor.css charting library."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "site/atelier/studios/css-animation-generator/",
+      "source": "atelier-css-animation-generator",
+      "section": "atelier",
+      "title": "Kinetix Studio — Free CSS animation generator | Atelier by csslib",
+      "description": "Choreograph responsive CSS animations on a visual node graph. Kinetix Studio turns CSS keyframe animation into a flowchart you can see. Chain steps, run them in parallel, route different motion to different screen widths, and export production-ready @keyframes with the media queries already written.",
+      "og_type": "website",
+      "main_class": "is-kinetix",
+      "stylesheets": [
+        "/site/styles/tool-page.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Kinetix Studio",
+        "url": "https://csslib.github.io/site/atelier/css-animation-generator/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "description": "Kinetix Studio turns CSS keyframe animation into a flowchart you can see. Chain steps, run them in parallel, route different motion to different screen widths, and export production-ready @keyframes with the media queries already written.",
+        "featureList": [
+          "Visual node graph",
+          "Parallel branches & sync",
+          "Per-breakpoint routing",
+          "Keyframe & easing editor",
+          "Live responsive stage",
+          "Reduced-motion aware"
+        ],
+        "isPartOf": {
+          "@type": "CreativeWorkSeries",
+          "name": "Atelier"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "path": "site/atelier/studios/css-gradient-generator/",
+      "source": "atelier-css-gradient-generator",
+      "section": "atelier",
+      "title": "ChromaFlow — Free CSS gradient generator | Atelier by csslib",
+      "description": "Paint rich mesh-style gradients with perceptual OKLCH colour. ChromaFlow lets you paint a background instead of describing it. Drop colour emitters on a canvas, shape how far each one reaches, and export gradients that blend in OKLCH, so colours stay vivid instead of turning muddy grey.",
+      "og_type": "website",
+      "main_class": "is-chroma",
+      "stylesheets": [
+        "/site/styles/tool-page.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ChromaFlow",
+        "url": "https://csslib.github.io/site/atelier/css-gradient-generator/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "description": "ChromaFlow lets you paint a background instead of describing it. Drop colour emitters on a canvas, shape how far each one reaches, and export gradients that blend in OKLCH, so colours stay vivid instead of turning muddy grey.",
+        "featureList": [
+          "Spatial colour emitters",
+          "Shape every field",
+          "Perceptual OKLCH blending",
+          "Falloff curves",
+          "Harmonies & arrangements",
+          "Grain, legibility & export"
+        ],
+        "isPartOf": {
+          "@type": "CreativeWorkSeries",
+          "name": "Atelier"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "path": "site/atelier/studios/css-property-playground/",
+      "source": "atelier-css-property-playground",
+      "section": "atelier",
+      "title": "Specimen Lab — Free CSS property playground | Atelier by csslib",
+      "description": "Put any visual CSS property under the microscope. Specimen Lab is a hands-on playground for 32 visual CSS properties. Drag handles right on the stage, read how the browser really computes each value, and copy the exact declaration when it looks right.",
+      "og_type": "website",
+      "main_class": "is-specimen",
+      "stylesheets": [
+        "/site/styles/tool-page.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Specimen Lab",
+        "url": "https://csslib.github.io/site/atelier/css-property-playground/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "description": "Specimen Lab is a hands-on playground for 32 visual CSS properties. Drag handles right on the stage, read how the browser really computes each value, and copy the exact declaration when it looks right.",
+        "featureList": [
+          "32 visual properties",
+          "Hands-on gizmos",
+          "Mental models",
+          "Gotchas & pro tips",
+          "32 challenges",
+          "Copy-ready code"
+        ],
+        "isPartOf": {
+          "@type": "CreativeWorkSeries",
+          "name": "Atelier"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "path": "site/atelier/studios/css-layout-builder/",
+      "source": "atelier-css-layout-builder",
+      "section": "atelier",
+      "title": "IntrinsicFlow — Free CSS Grid & Flexbox layout builder | Atelier by csslib",
+      "description": "Build responsive page layouts that adapt without media queries. IntrinsicFlow builds page structure visually. Arrange semantic regions, give each one an intrinsic behaviour such as an auto-fit grid or a sidebar switcher, pin headers and sidebars, and export clean HTML and CSS.",
+      "og_type": "website",
+      "main_class": "is-intrinsic",
+      "stylesheets": [
+        "/site/styles/tool-page.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "IntrinsicFlow",
+        "url": "https://csslib.github.io/site/atelier/css-layout-builder/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "description": "IntrinsicFlow builds page structure visually. Arrange semantic regions, give each one an intrinsic behaviour such as an auto-fit grid or a sidebar switcher, pin headers and sidebars, and export clean HTML and CSS.",
+        "featureList": [
+          "Visual structure tree",
+          "Intrinsic layout patterns",
+          "Sticky & fixed chrome",
+          "Fluid space & type",
+          "Live viewport",
+          "Semantic export"
+        ],
+        "isPartOf": {
+          "@type": "CreativeWorkSeries",
+          "name": "Atelier"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "path": "site/vektor/",
+      "source": "vektor",
+      "section": "vektor",
+      "title": "Vektor.css — Native CSS Charting Library (Zero JavaScript) | csslib",
+      "description": "Vektor.css is a free, MIT-licensed CSS charting library. Draw bar, radar, heatmap, donut, gauge, funnel and box-plot charts from plain HTML using @property, sin()/cos(), color-mix() and container queries, with zero JavaScript.",
+      "og_type": "website",
+      "main_class": "is-vektor",
+      "stylesheets": [
+        "/vektor-1.0.0.css",
+        "/site/styles/vektor-docs.css"
+      ],
+      "body_scripts": [
+        "/site/scripts/vektor-docs.js"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Vektor.css",
+        "url": "https://csslib.github.io/site/vektor/",
+        "version": "1.0.0",
+        "description": "A native CSS data-visualisation library: bar, radar, heatmap, donut, gauge, funnel and box-plot charts with zero JavaScript.",
+        "programmingLanguage": "CSS",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        }
+      }
+    },
+    {
+      "path": "site/modern-css/",
+      "source": "modern-css",
+      "section": "learn",
+      "title": "Modern CSS Features Explained with Live Demos and Browser Support | csslib",
+      "description": "A practical guide to modern CSS: container queries, :has(), nesting, cascade layers, @scope, oklch(), color-mix(), light-dark(), popover, @starting-style, view transitions, scroll-driven animations, anchor positioning and more, with live demos, code and Baseline browser support.",
+      "og_type": "article",
+      "main_class": "is-learn",
+      "stylesheets": [
+        "/site/styles/learn.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Modern CSS features explained",
+        "url": "https://csslib.github.io/site/modern-css/",
+        "description": "The newest CSS features with live demos, code examples, links to MDN and the specifications, and Baseline browser support.",
+        "dateModified": "2026-11-13",
+        "inLanguage": "en",
+        "about": {
+          "@type": "Thing",
+          "name": "Cascading Style Sheets"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "csslib",
+          "url": "https://csslib.github.io/"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        }
+      }
+    },
+    {
+      "path": "site/resources/",
+      "source": "resources",
+      "section": "learn",
+      "title": "CSS Resources: Official Specs, MDN Docs, Browser Support and Tools | csslib",
+      "description": "A curated list of official CSS resources: W3C and CSS Working Group specifications, MDN reference and courses, Baseline and Can I use support data, browser release notes, validators and DevTools.",
+      "og_type": "website",
+      "main_class": "is-learn",
+      "stylesheets": [
+        "/site/styles/learn.css"
+      ],
+      "structured_data": {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "CSS resources",
+        "url": "https://csslib.github.io/site/resources/",
+        "description": "Official CSS specifications, documentation, browser support data and tools, in one place.",
+        "dateModified": "2026-11-13",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "csslib",
+          "url": "https://csslib.github.io/"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Sengar"
+        }
+      }
+    }
+  ],
+  "static_pages": [
+    {
+      "path": "site/atelier/css-animation-generator/"
+    },
+    {
+      "path": "site/atelier/css-gradient-generator/"
+    },
+    {
+      "path": "site/atelier/css-property-playground/"
+    },
+    {
+      "path": "site/atelier/css-layout-builder/"
+    }
+  ]
+}

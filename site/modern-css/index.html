@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (C) 2026 Abhishek Sengar -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern CSS Features Explained with Live Demos and Browser Support | csslib</title>
+  <meta name="description" content="A practical guide to modern CSS: container queries, :has(), nesting, cascade layers, @scope, oklch(), color-mix(), light-dark(), popover, @starting-style, view transitions, scroll-driven animations, anchor positioning and more, with live demos, code and Baseline browser support." />
+  <meta name="theme-color" content="#f5f6fa" />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://csslib.github.io/site/modern-css/" />
+  <meta property="og:url" content="https://csslib.github.io/site/modern-css/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="csslib" />
+  <meta property="og:title" content="Modern CSS Features Explained with Live Demos and Browser Support | csslib" />
+  <meta property="og:description" content="A practical guide to modern CSS: container queries, :has(), nesting, cascade layers, @scope, oklch(), color-mix(), light-dark(), popover, @starting-style, view transitions, scroll-driven animations, anchor positioning and more, with live demos, code and Baseline browser support." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/site/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" type="application/xml" href="/site/sitemap.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;display=swap" />
+  <link rel="stylesheet" href="/site/atelier/suite/styles/tokens.css" />
+  <link rel="stylesheet" href="/site/styles/site.css" />
+  <link rel="stylesheet" href="/site/styles/learn.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Modern CSS features explained",
+  "url": "https://csslib.github.io/site/modern-css/",
+  "description": "The newest CSS features with live demos, code examples, links to MDN and the specifications, and Baseline browser support.",
+  "dateModified": "2026-11-13",
+  "inLanguage": "en",
+  "about": {
+    "@type": "Thing",
+    "name": "Cascading Style Sheets"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "csslib",
+    "url": "https://csslib.github.io/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Abhishek Sengar"
+  }
+}
+  </script>
+  <script src="/site/scripts/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-bar">
+      <a class="brand" href="/" aria-label="csslib home">
+        <span class="brand-tile"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11.5 5.5c-2.6 0-3.8 1.3-3.8 3.9v3.4c0 1.6-.8 2.5-2.7 2.7v1c1.9.2 2.7 1.1 2.7 2.7v3.4c0 2.6 1.2 3.9 3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 5.5c2.6 0 3.8 1.3 3.8 3.9v3.4c0 1.6.8 2.5 2.7 2.7v1c-1.9.2-2.7 1.1-2.7 2.7v3.4c0 2.6-1.2 3.9-3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12.5" r="2.4" fill="#6366f1"/><circle cx="12.9" cy="18.4" r="2.4" fill="rgb(var(--kinetix-500-rgb))"/><circle cx="19.1" cy="18.4" r="2.4" fill="rgb(var(--specimen-500-rgb))"/></svg></span>
+        <span class="brand-text"><span class="brand-name">csslib</span><span class="brand-tagline">Open-source CSS projects</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="site-nav-link" type="button" popovertarget="atelier-menu" aria-expanded="false">Atelier <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg></button>
+        <a class="site-nav-link" href="/site/vektor/">Vektor.css</a>
+        <button class="site-nav-link" type="button" popovertarget="learn-menu" aria-expanded="false" aria-current="page">Learn <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg></button>
+        <a class="site-nav-link" href="/site/about/">About</a>
+      </nav>
+      <div class="site-header-actions">
+        <a class="button is-small" href="/#projects">Explore projects <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <button class="menu-button" type="button" popovertarget="mobile-menu" aria-expanded="false" aria-label="Menu"><span></span></button>
+    </div>
+    <div class="nav-popover studios-popover" id="atelier-menu" popover>
+      <a class="project-menu-head" href="/site/atelier/">
+        <span class="brand-tile is-small"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="rgb(var(--kinetix-500-rgb))"/><path d="M22.4 3.6c3.3-.2 6 2 6.1 5 .1 3.6-2.6 6.9-6.3 7.1-3.1.2-6-2-6.1-5-.1-3.4 3-6.9 6.3-7.1Z" fill="rgb(var(--chromaflow-500-rgb))"/><rect x="4" y="18" width="12" height="11" fill="rgb(var(--specimen-500-rgb))"/><path d="M22.5 17.5 29 29H16Z" fill="rgb(var(--intrinsicflow-500-rgb))"/></svg></span>
+        <span><strong>Atelier</strong><small>Four visual CSS studios · Overview →</small></span>
+      </a>
+      <ul class="studio-menu-grid">
+          <li>
+            <a class="studio-menu-item is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+              <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+              <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-specimen" href="/site/atelier/studios/css-property-playground/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+              <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+              <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="nav-popover learn-popover" id="learn-menu" popover>
+      <ul class="learn-menu-list">
+        <li>
+          <a class="studio-menu-item is-learn" href="/site/modern-css/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5 14.6 9.4 21.5 12 14.6 14.6 12 21.5 9.4 14.6 2.5 12 9.4 9.4Z"/></svg></span>
+            <span><strong>Modern CSS</strong><small>The newest CSS features, with live demos and browser support</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="studio-menu-item is-learn" href="/site/resources/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.5h10.5L19 7v13.5H5Z"/></svg></span>
+            <span><strong>CSS resources</strong><small>Official specs, docs, support tables and tools</small></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-popover mobile-popover" id="mobile-menu" popover data-anchor="header">
+      <div class="mobile-menu-section">
+        <a class="project-menu-head" href="/site/atelier/">
+          <span class="brand-tile is-small"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="rgb(var(--kinetix-500-rgb))"/><path d="M22.4 3.6c3.3-.2 6 2 6.1 5 .1 3.6-2.6 6.9-6.3 7.1-3.1.2-6-2-6.1-5-.1-3.4 3-6.9 6.3-7.1Z" fill="rgb(var(--chromaflow-500-rgb))"/><rect x="4" y="18" width="12" height="11" fill="rgb(var(--specimen-500-rgb))"/><path d="M22.5 17.5 29 29H16Z" fill="rgb(var(--intrinsicflow-500-rgb))"/></svg></span>
+          <span><strong>Atelier</strong><small>Four visual CSS studios</small></span>
+        </a>
+        <ul class="studio-menu-grid">
+          <li>
+            <a class="studio-menu-item is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+              <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+              <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-specimen" href="/site/atelier/studios/css-property-playground/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+              <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+              <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu-section">
+        <a class="mobile-menu-link" href="/site/vektor/">Vektor.css — CSS charting library</a>
+        <a class="mobile-menu-link" href="/site/modern-css/">Modern CSS — new features explained</a>
+        <a class="mobile-menu-link" href="/site/resources/">CSS resources — specs, docs and tools</a>
+        <a class="mobile-menu-link" href="/site/about/">About</a>
+        <a class="button" href="/#projects">Explore projects <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="is-learn">
+    <section class="learn-hero">
+      <div class="wrap learn-hero-grid">
+        <div class="learn-hero-copy">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">csslib</a><span aria-hidden="true">/</span><span>Learn</span><span aria-hidden="true">/</span><span aria-current="page">Modern CSS</span>
+          </nav>
+          <span class="eyebrow"><span class="eyebrow-dot"></span>Guide · Browser support checked 13 November 2026</span>
+          <h1>Modern CSS</h1>
+          <p class="learn-tagline">The newest CSS features, explained and shown live.</p>
+          <p class="learn-lead">CSS has gained more in the last few years than in the decade before. This guide covers the features worth knowing now: what each one does, a short example, a live demo where it helps, and links to the official docs, the specification and up-to-date browser support.</p>
+          <div class="button-row">
+            <a class="button is-tool" href="#layout">Start reading <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a class="button is-light" href="/site/resources/">Official CSS resources</a>
+          </div>
+        </div>
+        <aside class="support-key card" aria-labelledby="support-key-title">
+          <h2 id="support-key-title">How to read the support labels</h2>
+          <p>Labels follow <a href="https://web.dev/baseline" rel="noopener">Baseline</a>, the cross-browser status used by MDN, web.dev and Can I use.</p>
+          <ul>
+            <li class="is-widely"><span class="support-badge">Widely available</span><span>Has worked in Chrome, Edge, Firefox and Safari for at least 30 months.</span></li>
+            <li class="is-newly"><span class="support-badge">Newly available</span><span>Works in the latest version of every major browser, as of the year shown.</span></li>
+            <li class="is-limited"><span class="support-badge">Limited availability</span><span>Not in every major browser yet. Use it with <code>@supports</code> and a fallback.</span></li>
+          </ul>
+          <p>Version numbers show the first release of each browser that supports the feature. Support changes quickly, so each card links to the live status on <a href="https://webstatus.dev/" rel="noopener">webstatus.dev</a>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="index-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">At a glance</span>
+          <h2 id="index-title">Every feature in this guide.</h2>
+        </div>
+        <div class="feature-index">
+          <div class="feature-index-group card is-widely"><span class="support-badge">Widely available</span><h3>Safe to use everywhere.</h3><ul><li><a href="#container-queries">Container queries</a></li><li><a href="#subgrid">Subgrid</a></li><li><a href="#has">:has()</a></li><li><a href="#nesting">Native nesting</a></li><li><a href="#cascade-layers">Cascade layers</a></li><li><a href="#oklch-color-mix">oklch() and color-mix()</a></li><li><a href="#trigonometry">sin(), cos() and other trigonometry</a></li></ul></div>
+          <div class="feature-index-group card is-newly"><span class="support-badge">Newly available</span><h3>In every major browser, recently.</h3><ul><li><a href="#style-queries">Container style queries</a></li><li><a href="#field-sizing">field-sizing</a></li><li><a href="#scope">@scope</a></li><li><a href="#relative-color">Relative color syntax</a></li><li><a href="#light-dark">light-dark()</a></li><li><a href="#text-wrap-balance">text-wrap: balance</a></li><li><a href="#popover">Popover API</a></li><li><a href="#starting-style">@starting-style and transition-behavior</a></li><li><a href="#view-transitions">View transitions</a></li><li><a href="#scroll-driven-animations">Scroll-driven animations</a></li><li><a href="#property">@property</a></li><li><a href="#round-mod-rem">round(), mod() and rem()</a></li><li><a href="#sibling-index">sibling-index() and sibling-count()</a></li></ul></div>
+          <div class="feature-index-group card is-limited"><span class="support-badge">Limited availability</span><h3>Progressive enhancement only.</h3><ul><li><a href="#anchor-positioning">Anchor positioning</a></li><li><a href="#cross-document-view-transitions">Cross-document view transitions</a></li><li><a href="#text-wrap-pretty">text-wrap: pretty</a></li><li><a href="#if">if()</a></li><li><a href="#function">Custom functions with @function</a></li><li><a href="#customizable-select">Customizable &lt;select&gt;</a></li><li><a href="#interpolate-size">interpolate-size</a></li><li><a href="#corner-shape">corner-shape</a></li><li><a href="#scroll-state-queries">Scroll-state container queries</a></li><li><a href="#typed-attr">Typed attr()</a></li><li><a href="#reading-flow">reading-flow</a></li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-label="Feature guide">
+      <div class="wrap">
+        <ul class="page-jump" aria-label="Jump to a topic"><li><a href="#layout">Layout and responsive design</a></li><li><a href="#selectors">Selectors and architecture</a></li><li><a href="#color">Color</a></li><li><a href="#typography">Typography</a></li><li><a href="#motion">Motion and interaction</a></li><li><a href="#functions">Values and functions</a></li><li><a href="#horizon">On the horizon</a></li></ul>
+      </div>
+    </section>
+
+    <div class="section is-tight">
+      <div class="wrap">
+        <section class="topic" id="layout" aria-labelledby="layout-title">
+          <div class="topic-head">
+            <h2 id="layout-title">Layout and responsive design</h2>
+            <p>Components that respond to the space they are given, grids that line up across nested elements, and form fields that size themselves.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="container-queries">
+            <div class="feature-doc-head">
+              <h3>Container queries</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 105 · Edge 105 · Firefox 110 · Safari 16</span></p>
+            </div>
+            <p>Style an element based on the size of its container instead of the whole viewport. A card can switch from stacked to side-by-side wherever it is placed: a sidebar, a grid cell or a full-width row.</p>
+            <div class="demo-stage"><div class="demo-resizable"><div class="demo-media-card"><div class="demo-media-thumb"></div><div><strong>Drag the bottom-right corner</strong><p>Under 380px wide this card stacks. Wider, the image sits beside the text.</p></div></div></div></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.card-slot {
+  container-type: inline-size;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+}
+
+@container (min-width: 380px) {
+  .card {
+    grid-template-columns: 120px 1fr;
+  }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-conditional-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/container-queries" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="style-queries">
+            <div class="feature-doc-head">
+              <h3>Container style queries</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2026</span><span>Chrome 111 · Edge 111 · Firefox 151 · Safari 18</span></p>
+            </div>
+            <p>Query the value of a custom property on a container. Set one variable such as --variant: featured on a parent and let every child restyle itself, with no extra classes.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.card {
+  --variant: featured;
+}
+
+@container style(--variant: featured) {
+  .card-title {
+    color: var(--accent);
+    font-size: 1.5rem;
+  }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_size_and_style_queries" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-conditional-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/container-style-queries" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="subgrid">
+            <div class="feature-doc-head">
+              <h3>Subgrid</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 117 · Edge 117 · Firefox 71 · Safari 16</span></p>
+            </div>
+            <p>Let a nested element reuse its parent grid's tracks. Titles, body text and buttons in a row of cards line up with each other, however long each card's content is.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-grid-2/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/subgrid" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="field-sizing">
+            <div class="feature-doc-head">
+              <h3>field-sizing</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2026</span><span>Chrome 123 · Edge 123 · Firefox 152 · Safari 26.2</span></p>
+            </div>
+            <p>Make inputs, selects and text areas grow and shrink with what is typed into them. Auto-growing text areas no longer need JavaScript.</p>
+            <div class="demo-stage is-field-demo"><input class="demo-field" type="text" value="Type here and I grow" aria-label="Auto-sizing text field"><p class="demo-fallback">Your browser does not support field-sizing yet, so this field keeps a fixed width.</p></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>textarea,
+input {
+  field-sizing: content;
+  min-width: 10ch;
+  max-width: 100%;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/field-sizing" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-ui-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/field-sizing" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="selectors" aria-labelledby="selectors-title">
+          <div class="topic-head">
+            <h2 id="selectors-title">Selectors and architecture</h2>
+            <p>Select parents by what they contain, write nested rules without a preprocessor, and keep specificity under control in large codebases.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="has">
+            <div class="feature-doc-head">
+              <h3>:has()</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 105 · Edge 105 · Firefox 121 · Safari 15.4</span></p>
+            </div>
+            <p>The long-awaited parent selector. Style an element based on what it contains or what follows it, such as a form row with an invalid input or a card that holds an image.</p>
+            <div class="demo-stage"><label class="demo-has-card"><input type="checkbox"> Email notifications <span class="demo-has-state"></span></label><p class="demo-caption">The card styles itself with <code>:has(input:checked)</code>. No JavaScript.</p></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.setting:has(input:checked) {
+  border-color: teal;
+  background: #ccfbf1;
+}
+
+form:has(:user-invalid) .submit {
+  opacity: 0.5;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/selectors-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/has" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="nesting">
+            <div class="feature-doc-head">
+              <h3>Native nesting</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 120 · Edge 120 · Firefox 117 · Safari 17.2</span></p>
+            </div>
+            <p>Write nested rules directly in CSS, the way Sass and Less made popular. The &amp; selector refers to the parent rule, and media queries can sit inside the rule they change.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.button {
+  background: teal;
+
+  &amp;:hover {
+    background: darkslategray;
+  }
+
+  .icon {
+    width: 1em;
+  }
+
+  @media (width &lt; 600px) {
+    width: 100%;
+  }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Nesting_selector" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-nesting-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/nesting" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="cascade-layers">
+            <div class="feature-doc-head">
+              <h3>Cascade layers</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 99 · Edge 99 · Firefox 97 · Safari 15.4</span></p>
+            </div>
+            <p>Decide which group of styles wins, independent of selector specificity. Put resets, third-party CSS and components in ordered layers so overrides stay predictable.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@layer reset, vendor, components, utilities;
+
+@import url("library.css") layer(vendor);
+
+@layer components {
+  .card { padding: 24px; }
+}
+
+@layer utilities {
+  .p-0 { padding: 0; }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-cascade-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/cascade-layers" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="scope">
+            <div class="feature-doc-head">
+              <h3>@scope</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2026</span><span>Chrome 143 · Edge 143 · Firefox 146 · Safari 26.4</span></p>
+            </div>
+            <p>Limit styles to one part of the page, with an optional lower boundary where they stop. Selectors stay short, and the closest scope wins when components are nested.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@scope (.card) to (.card-slot) {
+  img {
+    border-radius: 12px;
+  }
+
+  :scope {
+    padding: 24px;
+  }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-cascade-6/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/scope" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="color" aria-labelledby="color-title">
+          <div class="topic-head">
+            <h2 id="color-title">Color</h2>
+            <p>Perceptually even color spaces, color mixing and derived palettes, all computed by the browser.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="oklch-color-mix">
+            <div class="feature-doc-head">
+              <h3>oklch() and color-mix()</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 111 · Edge 111 · Firefox 113 · Safari 16.2</span></p>
+            </div>
+            <p>OKLCH describes color as lightness, chroma and hue, so changing one value gives an even, predictable result. color-mix() blends two colors in any color space, which makes tints and shades one line each.</p>
+            <div class="demo-stage"><ul class="demo-swatches"><li style="background: color-mix(in oklch, var(--demo-brand), white 70%)">70% white</li><li style="background: color-mix(in oklch, var(--demo-brand), white 35%)">35% white</li><li style="background: var(--demo-brand)">brand</li><li style="background: color-mix(in oklch, var(--demo-brand), black 25%)">25% black</li><li style="background: color-mix(in oklch, var(--demo-brand), black 50%)">50% black</li></ul></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>:root {
+  --brand: oklch(0.6 0.15 185);
+  --brand-tint: color-mix(in oklch, var(--brand), white 35%);
+  --brand-shade: color-mix(in oklch, var(--brand), black 25%);
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-color-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/color-mix" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="relative-color">
+            <div class="feature-doc-head">
+              <h3>Relative color syntax</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 125 · Edge 125 · Firefox 128 · Safari 18</span></p>
+            </div>
+            <p>Build a new color from an existing one by adjusting its channels. Rotate the hue, lighten it or make it translucent, all from a single brand variable.</p>
+            <div class="demo-stage"><ul class="demo-swatches"><li style="background: oklch(from var(--demo-brand) l c calc(h - 120))">h − 120</li><li style="background: oklch(from var(--demo-brand) l c calc(h - 60))">h − 60</li><li style="background: var(--demo-brand)">brand</li><li style="background: oklch(from var(--demo-brand) l c calc(h + 60))">h + 60</li><li style="background: oklch(from var(--demo-brand) l c h / 0.5)">50% alpha</li></ul></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.badge {
+  background: oklch(from var(--brand) l c h / 0.15);
+  border-color: oklch(from var(--brand) calc(l - 0.1) c h);
+}
+
+.accent {
+  color: oklch(from var(--brand) l c calc(h + 60));
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-color-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/relative-color" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="light-dark">
+            <div class="feature-doc-head">
+              <h3>light-dark()</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 123 · Edge 123 · Firefox 120 · Safari 17.5</span></p>
+            </div>
+            <p>Give a property its light and dark values in one place. The browser picks one based on the element's color-scheme, which can follow the system setting or a toggle.</p>
+            <div class="demo-stage"><div class="demo-scheme"><label><input type="checkbox"> Use the dark scheme</label><p>This box only sets color-scheme. Every color in it comes from light-dark().</p></div></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>:root {
+  color-scheme: light dark;
+}
+
+body {
+  background: light-dark(#ffffff, #12141f);
+  color: light-dark(#0d0f1a, #e8eaf3);
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-color-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/light-dark" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="typography" aria-labelledby="typography-title">
+          <div class="topic-head">
+            <h2 id="typography-title">Typography</h2>
+            <p>Better line breaking for headings and paragraphs with a single declaration.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="text-wrap-balance">
+            <div class="feature-doc-head">
+              <h3>text-wrap: balance</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 114 · Edge 114 · Firefox 121 · Safari 17.5</span></p>
+            </div>
+            <p>Spread a heading's words evenly across its lines instead of leaving one word stranded on the last line. Use it on headings and short text; text-wrap: pretty (further down) is the paragraph version.</p>
+            <div class="demo-stage"><div class="demo-wrap-compare"><div><small>wrap</small><h4>Modern CSS features you can ship today</h4></div><div class="is-balanced"><small>balance</small><h4>Modern CSS features you can ship today</h4></div></div></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>h1,
+h2,
+h3 {
+  text-wrap: balance;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-text-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/text-wrap-balance" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="motion" aria-labelledby="motion-title">
+          <div class="topic-head">
+            <h2 id="motion-title">Motion and interaction</h2>
+            <p>Menus, entry animations, page transitions and scroll effects that used to need a JavaScript library.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="popover">
+            <div class="feature-doc-head">
+              <h3>Popover API</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2025</span><span>Chrome 116 · Edge 116 · Firefox 125 · Safari 17</span></p>
+            </div>
+            <p>Add the popover attribute and a button with popovertarget to get a menu or tooltip that shows above everything else, closes on Escape or an outside click, and handles focus, without writing JavaScript.</p>
+            <div class="demo-stage"><button class="button is-small is-tool demo-popover-trigger" type="button" popovertarget="demo-popover" aria-expanded="false">Open the popover</button><div class="demo-popover" id="demo-popover" popover><p><strong>Hello from the top layer.</strong> Press Escape or click outside to close. The fade comes from @starting-style.</p></div></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>HTML + CSS</small></div><pre><code>&lt;button popovertarget="menu"&gt;Menu&lt;/button&gt;
+&lt;div id="menu" popover&gt;…&lt;/div&gt;
+
+[popover] {
+  transition: opacity 0.25s, display 0.25s allow-discrete,
+    overlay 0.25s allow-discrete;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" rel="noopener">MDN docs</a></li><li><a href="https://html.spec.whatwg.org/multipage/popover.html" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/popover" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="starting-style">
+            <div class="feature-doc-head">
+              <h3>@starting-style and transition-behavior</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 117 · Edge 117 · Firefox 129 · Safari 17.5</span></p>
+            </div>
+            <p>Animate elements as they appear, and as they switch to or from display: none. @starting-style sets the values to transition from, and transition-behavior: allow-discrete lets display and overlay take part.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.dialog {
+  opacity: 1;
+  transition: opacity 0.3s, display 0.3s allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.dialog.is-hidden {
+  display: none;
+  opacity: 0;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-transitions-2/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/starting-style" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="view-transitions">
+            <div class="feature-doc-head">
+              <h3>View transitions</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2025</span><span>Chrome 111 · Edge 111 · Firefox 144 · Safari 18</span></p>
+            </div>
+            <p>Animate between two states of a page. The browser captures before and after snapshots and cross-fades them, and elements with a view-transition-name morph from one position to the other.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>JS + CSS</small></div><pre><code>document.startViewTransition(() =&gt; updateTheDom());
+
+.product-photo {
+  view-transition-name: hero;
+}
+
+::view-transition-group(hero) {
+  animation-duration: 0.4s;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-view-transitions-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/view-transitions" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="scroll-driven-animations">
+            <div class="feature-doc-head">
+              <h3>Scroll-driven animations</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2026</span><span>Chrome 115 · Edge 115 · Firefox 159 · Safari 26</span></p>
+            </div>
+            <p>Tie an animation's progress to scrolling instead of time. Reading-progress bars, parallax and reveal-on-scroll effects run on the compositor without any scroll listeners.</p>
+            <div class="demo-stage is-scroll-demo"><div class="demo-scroll-box" tabindex="0" aria-label="Scrollable demo text"><div class="demo-scroll-progress"></div><p>Scroll inside this box. The bar above fills as you go, driven by animation-timeline: scroll().</p><p>There is no JavaScript on this page section: the browser links the keyframes directly to the scroll position of the nearest scroll container.</p><p>Use view() instead of scroll() to animate an element as it enters and leaves the visible area.</p><p>Keep scroll effects subtle, and turn them off for people who prefer reduced motion.</p><p>You reached the end.</p></div><p class="demo-fallback">Your browser does not support scroll-driven animations yet, so the bar stays still.</p></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@keyframes grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.progress {
+  transform-origin: left;
+  animation: grow linear both;
+  animation-timeline: scroll();
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/scroll-animations-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/scroll-driven-animations" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="property">
+            <div class="feature-doc-head">
+              <h3>@property</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 85 · Edge 85 · Firefox 128 · Safari 16.4</span></p>
+            </div>
+            <p>Register a custom property with a type, an initial value and inheritance rules. Typed properties can be animated, so gradients, angles and colors held in variables transition smoothly.</p>
+            <div class="demo-stage"><div class="demo-gradient-ring"><span>--demo-angle<br>animates</span></div></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@property --angle {
+  syntax: "&lt;angle&gt;";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.ring {
+  background: conic-gradient(from var(--angle), teal, indigo, teal);
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  to { --angle: 360deg; }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@property" rel="noopener">MDN docs</a></li><li><a href="https://drafts.css-houdini.org/css-properties-values-api-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/registered-custom-properties" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="functions" aria-labelledby="functions-title">
+          <div class="topic-head">
+            <h2 id="functions-title">Values and functions</h2>
+            <p>Math and tree-aware functions that let one rule produce many results.</p>
+          </div>
+          <div class="feature-docs">
+          <article class="feature-doc card" id="trigonometry">
+            <div class="feature-doc-head">
+              <h3>sin(), cos() and other trigonometry</h3>
+              <p class="support is-widely"><span class="support-badge">Widely available</span><span>Chrome 111 · Edge 111 · Firefox 108 · Safari 15.4</span></p>
+            </div>
+            <p>Use sin(), cos(), tan(), atan2() and friends in calc(). Lay items out on a circle, build radial menus or draw charts, as Vektor.css does for its radar charts.</p>
+            <div class="demo-stage"><ul class="demo-orbit" aria-hidden="true"><li style="--step: 0"></li><li style="--step: 1"></li><li style="--step: 2"></li><li style="--step: 3"></li><li style="--step: 4"></li><li style="--step: 5"></li><li style="--step: 6"></li><li style="--step: 7"></li></ul></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.dot {
+  --angle: calc(var(--step) * 45deg);
+  position: absolute;
+  left: calc(50% + cos(var(--angle)) * 60px);
+  top: calc(50% + sin(var(--angle)) * 60px);
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sin" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/trig-functions" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="round-mod-rem">
+            <div class="feature-doc-head">
+              <h3>round(), mod() and rem()</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2024</span><span>Chrome 125 · Edge 125 · Firefox 118 · Safari 17.2</span></p>
+            </div>
+            <p>Snap values to a step and take remainders inside calc(). Round fluid sizes to whole pixels or to a spacing scale, and build repeating patterns.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.fluid {
+  width: round(down, 50vw, 8px);
+  margin-left: mod(100vw, 120px);
+  --step: rem(var(--index), 4);
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/round" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/round-mod-rem" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="sibling-index">
+            <div class="feature-doc-head">
+              <h3>sibling-index() and sibling-count()</h3>
+              <p class="support is-newly"><span class="support-badge">Newly available · 2026</span><span>Chrome 138 · Edge 138 · Firefox 154 · Safari 26.2</span></p>
+            </div>
+            <p>Read an element's position among its siblings, and how many siblings there are, as numbers in calc(). Staggered animation delays and fanned-out layouts no longer need an inline --index on every item.</p>
+            <div class="demo-stage is-sibling-demo"><ul class="demo-stagger" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ul><p class="demo-fallback">Your browser does not support sibling-index() yet, so the bars are all the same width.</p></div>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.list li {
+  width: calc(sibling-index() * 15%);
+  animation-delay: calc(sibling-index() * 80ms);
+}
+
+.slice {
+  rotate: calc(360deg / sibling-count() * sibling-index());
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/sibling-count" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+        <section class="topic" id="horizon" aria-labelledby="horizon-title">
+          <div class="topic-head">
+            <h2 id="horizon-title">On the horizon</h2>
+            <p>These features already ship in at least one engine. Use them as progressive enhancement: wrap them in <code>@supports</code>, or pick values that older browsers can safely ignore.</p>
+          </div>
+          <div class="horizon-grid">
+          <article class="feature-doc card" id="anchor-positioning">
+            <div class="feature-doc-head">
+              <h3>Anchor positioning</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome, Edge and Safari 27; not yet in Firefox</span></p>
+            </div>
+            <p>Tether a tooltip or menu to any element and let the browser flip it when it would overflow the screen.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.trigger { anchor-name: --menu; }
+
+.menu {
+  position: absolute;
+  position-anchor: --menu;
+  position-area: bottom;
+  position-try-fallbacks: flip-block;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-anchor-position-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/anchor-positioning" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="cross-document-view-transitions">
+            <div class="feature-doc-head">
+              <h3>Cross-document view transitions</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome, Edge and Safari 18.2; not yet in Firefox</span></p>
+            </div>
+            <p>Animate between two separate pages of a multi-page site with one at-rule on both pages.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@view-transition {
+  navigation: auto;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@view-transition" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-view-transitions-2/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/cross-document-view-transitions" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="text-wrap-pretty">
+            <div class="feature-doc-head">
+              <h3>text-wrap: pretty</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome, Edge and Safari 26; not yet in Firefox</span></p>
+            </div>
+            <p>Slower, smarter line breaking for paragraphs that avoids single-word last lines. Older browsers ignore it.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>p {
+  text-wrap: pretty;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-text-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/text-wrap-pretty" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="if">
+            <div class="feature-doc-head">
+              <h3>if()</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Inline conditionals that choose a value based on a style query, media query or @supports test.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.button {
+  padding: if(
+    style(--size: large): 16px 28px;
+    else: 10px 18px
+  );
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/if" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="function">
+            <div class="feature-doc-head">
+              <h3>Custom functions with @function</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Define your own reusable CSS functions that take arguments and return a value.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>@function --fluid(--min, --max) {
+  result: clamp(var(--min), 4vw, var(--max));
+}
+
+h1 { font-size: --fluid(32px, 64px); }</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@function" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-mixins-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/function" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="customizable-select">
+            <div class="feature-doc-head">
+              <h3>Customizable &lt;select&gt;</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome, Edge and Safari 27; not yet in Firefox</span></p>
+            </div>
+            <p>Opt a native select into full styling, including its button, picker and options, while keeping its built-in accessibility.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>select,
+::picker(select) {
+  appearance: base-select;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-forms-1/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/customizable-select" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="interpolate-size">
+            <div class="feature-doc-head">
+              <h3>interpolate-size</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Transition to and from intrinsic sizes such as height: auto, so accordions can animate open.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>:root {
+  interpolate-size: allow-keywords;
+}
+
+.panel { transition: height 0.3s; }</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/interpolate-size" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="corner-shape">
+            <div class="feature-doc-head">
+              <h3>corner-shape</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Go beyond round corners: squircles, bevels, scoops and notches, all driven by border-radius.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.card {
+  border-radius: 32px;
+  corner-shape: squircle;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/corner-shape" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-borders-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/corner-shape" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="scroll-state-queries">
+            <div class="feature-doc-head">
+              <h3>Scroll-state container queries</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Style a sticky header when it is stuck, or a carousel item when it is snapped, with a container query.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.header {
+  container-type: scroll-state;
+  position: sticky;
+  top: 0;
+}
+
+@container scroll-state(stuck: top) {
+  .header-inner { box-shadow: 0 4px 12px #0002; }
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules/Container_scroll-state_queries" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-conditional-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/container-scroll-state-queries" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="typed-attr">
+            <div class="feature-doc-head">
+              <h3>Typed attr()</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome, Edge and Firefox 155; not yet in Safari</span></p>
+            </div>
+            <p>Read an HTML attribute as a number, length or color in any property, not only in content.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.bar {
+  width: attr(data-value type(&lt;percentage&gt;), 0%);
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/attr" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-values-5/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/attr" rel="noopener">Browser support</a></li></ul>
+          </article>
+          <article class="feature-doc card" id="reading-flow">
+            <div class="feature-doc-head">
+              <h3>reading-flow</h3>
+              <p class="support is-limited"><span class="support-badge">Limited availability</span><span>Chrome and Edge only so far</span></p>
+            </div>
+            <p>Make keyboard and screen-reader order follow a grid or flex layout's visual order, not the source order.</p>
+            <div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>CSS</small></div><pre><code>.grid {
+  display: grid;
+  reading-flow: grid-rows;
+}</code></pre></div>
+            <ul class="feature-links"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/reading-flow" rel="noopener">MDN docs</a></li><li><a href="https://drafts.csswg.org/css-display-4/" rel="noopener">Specification</a></li><li><a href="https://webstatus.dev/features/reading-flow" rel="noopener">Browser support</a></li></ul>
+          </article>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="section is-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Go deeper, or start building.</h2>
+          <p>Browse the official specifications and references, or try these features visually in the Atelier studios.</p>
+          <div class="button-row">
+            <a class="button is-light" href="/site/resources/">CSS resources <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a class="button is-ghost-dark" href="/site/atelier/">Open Atelier</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/" aria-label="csslib home">
+        <span class="brand-tile"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11.5 5.5c-2.6 0-3.8 1.3-3.8 3.9v3.4c0 1.6-.8 2.5-2.7 2.7v1c1.9.2 2.7 1.1 2.7 2.7v3.4c0 2.6 1.2 3.9 3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 5.5c2.6 0 3.8 1.3 3.8 3.9v3.4c0 1.6.8 2.5 2.7 2.7v1c-1.9.2-2.7 1.1-2.7 2.7v3.4c0 2.6-1.2 3.9-3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12.5" r="2.4" fill="#6366f1"/><circle cx="12.9" cy="18.4" r="2.4" fill="rgb(var(--kinetix-500-rgb))"/><circle cx="19.1" cy="18.4" r="2.4" fill="rgb(var(--specimen-500-rgb))"/></svg></span>
+        <span class="brand-text"><span class="brand-name">csslib</span><span class="brand-tagline">Open-source CSS projects</span></span>
+      </a>
+          <p>A growing collection of free, open-source CSS projects: visual studios, libraries and experiments that run in your browser and stay out of your build.</p>
+        </div>
+        <div class="footer-column">
+          <h2>Atelier</h2>
+          <ul>
+            <li><a href="/site/atelier/">All studios</a></li>
+            <li><a href="/site/atelier/studios/css-animation-generator/">Kinetix Studio</a></li>
+            <li><a href="/site/atelier/studios/css-gradient-generator/">ChromaFlow</a></li>
+            <li><a href="/site/atelier/studios/css-property-playground/">Specimen Lab</a></li>
+            <li><a href="/site/atelier/studios/css-layout-builder/">IntrinsicFlow</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>Vektor.css</h2>
+          <ul>
+            <li><a href="/site/vektor/">Documentation</a></li>
+            <li><a href="/site/vektor/#gallery">Chart gallery</a></li>
+            <li><a href="/vektor-1.0.0.css" download>Download v1.0.0</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <ul>
+            <li><a href="/site/modern-css/">Modern CSS</a></li>
+            <li><a href="/site/resources/">CSS resources</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" rel="noopener">MDN CSS docs</a></li>
+            <li><a href="https://drafts.csswg.org/" rel="noopener">CSS specifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>csslib</h2>
+          <ul>
+            <li><a href="/">All projects</a></li>
+            <li><a href="/site/about/">About</a></li>
+            <li><a href="https://github.com/monad-one" rel="noopener me">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abhishek-sengar" rel="noopener me">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Abhishek Sengar. All csslib projects are released under the <a href="/LICENSE">MIT License</a>.</span>
+        <span>Plain HTML and CSS, with a little JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

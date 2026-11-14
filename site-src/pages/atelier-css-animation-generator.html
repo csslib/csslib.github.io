@@ -1,0 +1,148 @@
+    <section class="tool-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">csslib</a><span aria-hidden="true">/</span><a href="/site/atelier/">Atelier</a><span aria-hidden="true">/</span><span aria-current="page">Kinetix Studio</span>
+        </nav>
+        <div class="tool-hero-grid">
+          <div class="tool-hero-copy">
+            <span class="shape-tile is-large"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+            <p class="tool-kind">CSS animation generator · an Atelier studio</p>
+            <h1>Kinetix Studio</h1>
+            <p class="tool-tagline">Choreograph responsive CSS animations on a visual node graph.</p>
+            <p class="tool-summary">Kinetix Studio turns CSS keyframe animation into a flowchart you can see. Chain steps, run them in parallel, route different motion to different screen widths, and export production-ready <code>@keyframes</code> with the media queries already written.</p>
+            <div class="button-row">
+              <a class="button is-tool" href="/site/atelier/css-animation-generator/">Open Kinetix Studio <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="button is-light" href="#features">See features</a>
+            </div>
+            <ul class="tool-facts">
+              <li>Free &amp; open source</li>
+              <li>Runs in your browser</li>
+              <li>Exports plain CSS</li>
+            </ul>
+          </div>
+          <a class="tool-shot" href="/site/atelier/css-animation-generator/" aria-label="Open Kinetix Studio">
+            <span class="tool-shot-bar"><span></span><span></span><span></span><small>atelier/css-animation-generator</small></span>
+            <img src="/site/atelier/studios/css-animation-generator/preview.jpg" alt="Kinetix Studio interface: CSS animation generator" width="1440" height="900" fetchpriority="high" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Features</span>
+          <h2 id="features-title">What you can do in Kinetix Studio.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature card">
+            <span class="feature-number">01</span>
+            <h3>Visual node graph</h3>
+            <p>Start from a trigger and chain animation steps with wires, so the whole sequence reads as a flowchart instead of a wall of delays.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">02</span>
+            <h3>Parallel branches &amp; sync</h3>
+            <p>Fire several elements at once, then hold the next step until every branch has finished. Kinetix works out the delays for you.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">03</span>
+            <h3>Per-breakpoint routing</h3>
+            <p>A width-range router sends different motion to mobile, tablet and desktop, and the export writes the <code>@media</code> queries.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">04</span>
+            <h3>Keyframe &amp; easing editor</h3>
+            <p>Tune translate, scale, rotate, opacity, blur and colour at every keyframe stop, and shape timing with a cubic-bezier curve editor.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">05</span>
+            <h3>Live responsive stage</h3>
+            <p>Preview on a realistic page that uses your own element IDs, drag the viewport width and replay whenever you like.</p>
+          </article>
+          <article class="feature card">
+            <span class="feature-number">06</span>
+            <h3>Reduced-motion aware</h3>
+            <p>Simulate <code>prefers-reduced-motion</code> and export a respectful fallback alongside the full animation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">How it works</span>
+          <h2 id="steps-title">Four steps to production CSS.</h2>
+        </div>
+        <ol class="steps tool-steps"><li class="card"><h3>Pick a starting flow</h3><p>Load a preset sequence or start from a single trigger.</p></li><li class="card"><h3>Wire the sequence</h3><p>Add steps, branch them in parallel and set width ranges.</p></li><li class="card"><h3>Tune the motion</h3><p>Edit keyframe stops, durations and easing curves.</p></li><li class="card"><h3>Export the CSS</h3><p>Copy or download keyframes, selectors and media queries.</p></li></ol>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="export-title">
+      <div class="wrap export-grid">
+        <div class="export-copy">
+          <span class="section-kicker">The output</span>
+          <h2 id="export-title">Readable keyframes, ready for production</h2>
+          <p>Kinetix writes the same CSS you would write by hand: named <code>@keyframes</code>, one <code>animation</code> shorthand per element, media queries for each width range and a reduced-motion block.</p>
+          <h3>Great for</h3>
+          <ul class="chip-list"><li>Hero entrances</li><li>Staggered card reveals</li><li>Navigation drops</li><li>Responsive motion systems</li></ul>
+        </div>
+        <div class="code-window">
+              <div class="code-window-bar"><span></span><span></span><span></span><small>Example export</small></div>
+              <pre><code>@keyframes kx-hero-rise {
+  0%   { opacity: 0; transform: translateY(24px) scale(0.96); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+#hero-heading {
+  animation: kx-hero-rise 620ms cubic-bezier(0.22, 1, 0.36, 1) 40ms both;
+}
+
+@media (max-width: 639px) {
+  #hero-heading { animation-duration: 420ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-heading { animation: none; }
+}</code></pre>
+            </div>
+      </div>
+    </section>
+
+    <section class="section is-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ready to try Kinetix Studio?</h2>
+          <p>It opens instantly in your browser. Nothing to install, nothing to sign up for.</p>
+          <div class="button-row">
+            <a class="button is-light" href="/site/atelier/css-animation-generator/">Open Kinetix Studio <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="related-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="related-title">Explore the other Atelier studios</h2>
+        </div>
+        <div class="related-grid">
+          <a class="related-card card is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+            <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-specimen" href="/site/atelier/studios/css-property-playground/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+            <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="related-card card is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+            <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            <span class="related-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>

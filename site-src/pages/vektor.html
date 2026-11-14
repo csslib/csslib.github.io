@@ -1,0 +1,404 @@
+    <section class="vk-hero">
+      <div class="wrap vk-hero-grid">
+        <div class="vk-hero-copy">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">csslib</a><span aria-hidden="true">/</span><span aria-current="page">Vektor.css</span>
+          </nav>
+          <span class="eyebrow"><span class="eyebrow-dot"></span>A csslib project · MIT licensed · v1.0.0</span>
+          <h1>Vektor.css</h1>
+          <p class="vk-tagline">Charts and graphs in pure, native CSS.</p>
+          <p class="vk-lead">Write a list or a table, set a few custom properties, and get accessible, animated, responsive charts. No JavaScript, no canvas, no build step. Just one stylesheet you can drop into any project.</p>
+          <div class="button-row">
+            <a class="button is-tool" href="/vektor-1.0.0.css" download>Download v1.0.0 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v9M4 7l4 4 4-4M3 14h10"/></svg></a>
+            <a class="button is-light" href="#gallery">See the charts</a>
+          </div>
+          <dl class="vk-stats">
+            <div><dt>JavaScript</dt><dd>0&nbsp;KB</dd></div>
+            <div><dt>Chart types</dt><dd>7</dd></div>
+            <div><dt>Dependencies</dt><dd>None</dd></div>
+            <div><dt>License</dt><dd>MIT</dd></div>
+          </dl>
+        </div>
+        <div class="vk-hero-demo card vk-scope" data-theme="dark">
+          <div class="vk-hero-demo-head">
+            <strong>Weekly active users</strong>
+            <span>Pure CSS · hover a bar</span>
+          </div>
+          <ul class="vk-chart vk-bar vk-grid-y" style="--target: 70;" data-target-label="Goal 70%">
+            <li style="--val: 42; --c: var(--vk-c-1);" data-label="Mon" data-value="42%"></li>
+            <li style="--val: 58; --c: var(--vk-c-1);" data-label="Tue" data-value="58%"></li>
+            <li style="--val: 64; --c: var(--vk-c-2);" data-label="Wed" data-value="64%"></li>
+            <li style="--val: 81; --c: var(--vk-c-2);" data-label="Thu" data-value="81%"></li>
+            <li style="--val: 76; --c: var(--vk-c-3);" data-label="Fri" data-value="76%"></li>
+            <li style="--val: 93; --c: var(--vk-c-5);" data-label="Sat" data-value="93%"></li>
+            <li style="--val: 69; --c: var(--vk-c-4);" data-label="Sun" data-value="69%"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" id="install" aria-labelledby="install-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Install</span>
+          <h2 id="install-title">Add one line to your page.</h2>
+          <p>Link the hosted file or download <code>vektor-1.0.0.css</code> and serve it yourself. Every release keeps its version in the file name, so a link never changes under you. A CDN option is on its way.</p>
+        </div>
+        <div class="install-grid">
+          <div class="install-option card">
+            <h3>Hosted</h3>
+            <p>Straight from csslib.github.io.</p>
+            <div class="copy-field"><code>&lt;link rel="stylesheet" href="https://csslib.github.io/vektor-1.0.0.css"&gt;</code><button class="copy-button" type="button" data-copy-text='&lt;link rel="stylesheet" href="https://csslib.github.io/vektor-1.0.0.css"&gt;'>Copy</button></div>
+          </div>
+          <div class="install-option card is-pending">
+            <h3>CDN <span class="status-badge">Work in progress</span></h3>
+            <p>A globally cached CDN link is being set up. Use the hosted or self-hosted option for now.</p>
+            <div class="copy-field is-disabled" aria-disabled="true"><code>Coming soon</code></div>
+          </div>
+          <div class="install-option card">
+            <h3>Self-hosted</h3>
+            <p>Download the file and keep it with your assets.</p>
+            <div class="copy-field"><code>&lt;link rel="stylesheet" href="/css/vektor-1.0.0.css"&gt;</code><a class="copy-button" href="/vektor-1.0.0.css" download>Download</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" id="quick-start" aria-labelledby="quick-start-title">
+      <div class="wrap quick-start">
+        <div class="section-head">
+          <span class="section-kicker">Quick start</span>
+          <h2 id="quick-start-title">Your first chart in three steps.</h2>
+        </div>
+        <ol class="steps quick-steps">
+          <li class="card" style="--step-color: var(--vektor)"><h3>Link the stylesheet</h3><p>Add <code>vektor-1.0.0.css</code> to the <code>&lt;head&gt;</code> of your page.</p></li>
+          <li class="card" style="--step-color: var(--vektor)"><h3>Add a scope</h3><p>Wrap charts in an element with <code>class="vk-scope"</code> so they get fonts, colours and container queries.</p></li>
+          <li class="card" style="--step-color: var(--vektor)"><h3>Write your data</h3><p>Each item sets <code>--val</code> from 0 to 100. Labels come from <code>data-label</code>.</p></li>
+        </ol>
+        <div class="code-window">
+          <div class="code-window-bar"><span></span><span></span><span></span><small>index.html</small></div>
+          <pre><code>&lt;link rel="stylesheet" href="https://csslib.github.io/vektor-1.0.0.css"&gt;
+
+&lt;div class="vk-scope" data-theme="light"&gt;
+  &lt;ul class="vk-chart vk-bar vk-grid-y" style="--target: 80" data-target-label="Goal: 80%"&gt;
+    &lt;li style="--val: 65" data-label="Q1" data-value="65%"&gt;&lt;/li&gt;
+    &lt;li style="--val: 88" data-label="Q2" data-value="88%"&gt;&lt;/li&gt;
+    &lt;li style="--val: 74" data-label="Q3" data-value="74%"&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" id="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Gallery</span>
+          <h2 id="gallery-title">Seven charts, all live.</h2>
+          <p>Every chart below is drawn by Vektor.css alone. Change the theme, pick a brand colour or shuffle the data to watch <code>@property</code> animate the change. Open “View HTML” to copy any example.</p>
+        </div>
+
+        <div class="gallery-toolbar card" role="group" aria-label="Gallery controls">
+          <div class="segmented" role="radiogroup" aria-label="Theme">
+            <button type="button" role="radio" aria-checked="true" data-theme-choice="light">Light</button>
+            <button type="button" role="radio" aria-checked="false" data-theme-choice="dark">Dark</button>
+          </div>
+          <label class="seed-picker">
+            <span>Brand colour</span>
+            <input type="color" id="seed-color" value="#6366f1" />
+          </label>
+          <button class="button is-small is-light" type="button" id="toggle-values" aria-pressed="false">Show values</button>
+          <button class="button is-small is-tool" type="button" id="shuffle-data">Shuffle data</button>
+        </div>
+
+        <div class="gallery" id="chart-gallery" data-theme="light">
+
+          <article class="demo-card vk-scope is-wide">
+            <header class="demo-head">
+              <div>
+                <h3>Bar chart with target line</h3>
+                <p>A semantic <code>&lt;table&gt;</code> with a <code>--target</code> line, alert colouring and legend isolation using <code>:has()</code>.</p>
+              </div>
+              <span class="demo-tag">.vk-bar</span>
+            </header>
+            <div class="demo-chart" id="demo-bar">
+<div class="vk-legend">
+  <span class="vk-legend-item" data-series="1"><span class="vk-legend-dot" style="--c: var(--vk-c-1)"></span> US-East</span>
+  <span class="vk-legend-item" data-series="2"><span class="vk-legend-dot" style="--c: var(--vk-c-2)"></span> EU-Central</span>
+  <span class="vk-legend-item" data-series="3"><span class="vk-legend-dot" style="--c: var(--vk-c-danger)"></span> Over 85%</span>
+</div>
+<table class="vk-chart vk-bar vk-grid-y" id="main-bar" style="--target: 78;" data-target-label="SLA 78%">
+  <caption class="vk-sr-only">Monthly cluster utilisation</caption>
+  <thead><tr><th>Month</th><th>Cluster</th><th>Utilisation</th></tr></thead>
+  <tbody>
+    <tr style="--val: 54; --c: var(--vk-c-1);" data-series="1" data-label="Jan" data-value="54%"><td class="vk-sr-only">Jan</td><td class="vk-sr-only">US-East</td><td class="vk-sr-only">54%</td></tr>
+    <tr style="--val: 68; --c: var(--vk-c-1);" data-series="1" data-label="Feb" data-value="68%"><td class="vk-sr-only">Feb</td><td class="vk-sr-only">US-East</td><td class="vk-sr-only">68%</td></tr>
+    <tr style="--val: 62; --c: var(--vk-c-2);" data-series="2" data-label="Mar" data-value="62%"><td class="vk-sr-only">Mar</td><td class="vk-sr-only">EU-Central</td><td class="vk-sr-only">62%</td></tr>
+    <tr style="--val: 79; --c: var(--vk-c-2);" data-series="2" data-label="Apr" data-value="79%"><td class="vk-sr-only">Apr</td><td class="vk-sr-only">EU-Central</td><td class="vk-sr-only">79%</td></tr>
+    <tr style="--val: 91;" data-alert="high" data-series="3" data-label="May" data-value="91%"><td class="vk-sr-only">May</td><td class="vk-sr-only">US-East</td><td class="vk-sr-only">91%</td></tr>
+    <tr style="--val: 74; --c: var(--vk-c-1);" data-series="1" data-label="Jun" data-value="74%"><td class="vk-sr-only">Jun</td><td class="vk-sr-only">US-East</td><td class="vk-sr-only">74%</td></tr>
+    <tr style="--val: 83; --c: var(--vk-c-2);" data-series="2" data-label="Jul" data-value="83%"><td class="vk-sr-only">Jul</td><td class="vk-sr-only">EU-Central</td><td class="vk-sr-only">83%</td></tr>
+    <tr style="--val: 95;" data-alert="high" data-series="3" data-label="Aug" data-value="95%"><td class="vk-sr-only">Aug</td><td class="vk-sr-only">EU-Central</td><td class="vk-sr-only">95%</td></tr>
+  </tbody>
+</table>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-bar">Copy</button><pre><code data-source-of="demo-bar"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>Radar chart</h3>
+                <p>Points are placed with CSS <code>sin()</code> and <code>cos()</code>.</p>
+              </div>
+              <span class="demo-tag">.vk-radar</span>
+            </header>
+            <div class="demo-chart" id="demo-radar">
+<ul class="vk-chart vk-radar" style="--total: 6;">
+  <li style="--i: 0; --val: 88; --c: var(--vk-c-1);" data-label="Speed"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="Speed: 88"></div></li>
+  <li style="--i: 1; --val: 74; --c: var(--vk-c-2);" data-label="Latency"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="Latency: 74"></div></li>
+  <li style="--i: 2; --val: 92; --c: var(--vk-c-3);" data-label="Uptime"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="Uptime: 92"></div></li>
+  <li style="--i: 3; --val: 65; --c: var(--vk-c-4);" data-label="Cost"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="Cost: 65"></div></li>
+  <li style="--i: 4; --val: 81; --c: var(--vk-c-5);" data-label="Security"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="Security: 81"></div></li>
+  <li style="--i: 5; --val: 78; --c: var(--vk-c-1);" data-label="DX"><div class="vk-radar-stem"></div><div class="vk-radar-point" title="DX: 78"></div></li>
+</ul>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-radar">Copy</button><pre><code data-source-of="demo-radar"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>Stacked &amp; grouped bars</h3>
+                <p>Add <code>.vk-grouped</code> to switch from stacked to side by side.</p>
+              </div>
+              <button class="demo-tag is-button" type="button" id="toggle-grouped" aria-pressed="false">Stacked ⇄ Grouped</button>
+            </header>
+            <div class="demo-chart" id="demo-multi">
+<div class="vk-legend">
+  <span class="vk-legend-item" data-series="1"><span class="vk-legend-dot" style="--c: var(--vk-c-1)"></span> API</span>
+  <span class="vk-legend-item" data-series="2"><span class="vk-legend-dot" style="--c: var(--vk-c-2)"></span> Workers</span>
+  <span class="vk-legend-item" data-series="3"><span class="vk-legend-dot" style="--c: var(--vk-c-3)"></span> Cache</span>
+</div>
+<ul class="vk-chart vk-bar vk-bar-multi vk-grid-y" id="multi-bar">
+  <li data-label="Q1"><div class="vk-seg" data-series="1" style="--val: 32; --c: var(--vk-c-1);"></div><div class="vk-seg" data-series="2" style="--val: 28; --c: var(--vk-c-2);"></div><div class="vk-seg" data-series="3" style="--val: 24; --c: var(--vk-c-3);"></div></li>
+  <li data-label="Q2"><div class="vk-seg" data-series="1" style="--val: 38; --c: var(--vk-c-1);"></div><div class="vk-seg" data-series="2" style="--val: 30; --c: var(--vk-c-2);"></div><div class="vk-seg" data-series="3" style="--val: 22; --c: var(--vk-c-3);"></div></li>
+  <li data-label="Q3"><div class="vk-seg" data-series="1" style="--val: 29; --c: var(--vk-c-1);"></div><div class="vk-seg" data-series="2" style="--val: 35; --c: var(--vk-c-2);"></div><div class="vk-seg" data-series="3" style="--val: 31; --c: var(--vk-c-3);"></div></li>
+  <li data-label="Q4"><div class="vk-seg" data-series="1" style="--val: 42; --c: var(--vk-c-1);"></div><div class="vk-seg" data-series="2" style="--val: 27; --c: var(--vk-c-2);"></div><div class="vk-seg" data-series="3" style="--val: 28; --c: var(--vk-c-3);"></div></li>
+</ul>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-multi">Copy</button><pre><code data-source-of="demo-multi"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>OKLCH heatmap</h3>
+                <p>Each cell sets only <code>--val</code>; intensity comes from <code>color-mix(in oklch)</code>.</p>
+              </div>
+              <span class="demo-tag">.vk-heatmap</span>
+            </header>
+            <div class="demo-chart" id="demo-heatmap">
+<div class="vk-chart vk-heatmap" id="heatmap" style="--cols: 6;">
+  <div></div>
+  <div class="vk-heatmap-col-header">00h</div><div class="vk-heatmap-col-header">04h</div><div class="vk-heatmap-col-header">08h</div><div class="vk-heatmap-col-header">12h</div><div class="vk-heatmap-col-header">16h</div><div class="vk-heatmap-col-header">20h</div>
+  <div class="vk-heatmap-label">Mon</div>
+  <div class="vk-heatmap-cell" style="--val: 18;">18</div><div class="vk-heatmap-cell" style="--val: 12;">12</div><div class="vk-heatmap-cell" style="--val: 64;">64</div><div class="vk-heatmap-cell" style="--val: 92;">92</div><div class="vk-heatmap-cell" style="--val: 85;">85</div><div class="vk-heatmap-cell" style="--val: 41;">41</div>
+  <div class="vk-heatmap-label">Wed</div>
+  <div class="vk-heatmap-cell" style="--val: 22;">22</div><div class="vk-heatmap-cell" style="--val: 15;">15</div><div class="vk-heatmap-cell" style="--val: 71;">71</div><div class="vk-heatmap-cell" style="--val: 98;">98</div><div class="vk-heatmap-cell" style="--val: 89;">89</div><div class="vk-heatmap-cell" style="--val: 53;">53</div>
+  <div class="vk-heatmap-label">Fri</div>
+  <div class="vk-heatmap-cell" style="--val: 29;">29</div><div class="vk-heatmap-cell" style="--val: 19;">19</div><div class="vk-heatmap-cell" style="--val: 58;">58</div><div class="vk-heatmap-cell" style="--val: 84;">84</div><div class="vk-heatmap-cell" style="--val: 76;">76</div><div class="vk-heatmap-cell" style="--val: 62;">62</div>
+  <div class="vk-heatmap-label">Sun</div>
+  <div class="vk-heatmap-cell" style="--val: 35;">35</div><div class="vk-heatmap-cell" style="--val: 14;">14</div><div class="vk-heatmap-cell" style="--val: 26;">26</div><div class="vk-heatmap-cell" style="--val: 48;">48</div><div class="vk-heatmap-cell" style="--val: 52;">52</div><div class="vk-heatmap-cell" style="--val: 44;">44</div>
+</div>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-heatmap">Copy</button><pre><code data-source-of="demo-heatmap"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>Box plot &amp; ranges</h3>
+                <p>Five properties per row: <code>--min</code>, <code>--q1</code>, <code>--med</code>, <code>--q3</code>, <code>--max</code>.</p>
+              </div>
+              <span class="demo-tag">.vk-range</span>
+            </header>
+            <div class="demo-chart" id="demo-range">
+<div class="vk-chart vk-range vk-grid-x">
+  <div class="vk-range-row" style="--min: 8; --q1: 20; --med: 32; --q3: 48; --max: 68; --c: var(--vk-c-1);">
+    <span>Auth</span>
+    <div class="vk-range-track"><div class="vk-range-whisker"></div><div class="vk-range-box"></div><div class="vk-range-median"></div></div>
+    <span>32 ms</span>
+  </div>
+  <div class="vk-range-row" style="--min: 15; --q1: 30; --med: 45; --q3: 64; --max: 88; --c: var(--vk-c-2);">
+    <span>Search</span>
+    <div class="vk-range-track"><div class="vk-range-whisker"></div><div class="vk-range-box"></div><div class="vk-range-median"></div></div>
+    <span>45 ms</span>
+  </div>
+  <div class="vk-range-row" style="--min: 5; --q1: 12; --med: 19; --q3: 28; --max: 42; --c: var(--vk-c-3);">
+    <span>Edge KV</span>
+    <div class="vk-range-track"><div class="vk-range-whisker"></div><div class="vk-range-box"></div><div class="vk-range-median"></div></div>
+    <span>19 ms</span>
+  </div>
+  <div class="vk-range-row" style="--min: 22; --q1: 42; --med: 58; --q3: 78; --max: 95; --c: var(--vk-c-4);">
+    <span>Inference</span>
+    <div class="vk-range-track"><div class="vk-range-whisker"></div><div class="vk-range-box"></div><div class="vk-range-median"></div></div>
+    <span>58 ms</span>
+  </div>
+</div>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-range">Copy</button><pre><code data-source-of="demo-range"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>Donut &amp; gauge</h3>
+                <p>A <code>conic-gradient()</code> with a mask cut-out, no SVG paths.</p>
+              </div>
+              <span class="demo-tag">.vk-donut</span>
+            </header>
+            <div class="demo-chart" id="demo-donut">
+<div class="donut-row">
+  <div class="vk-donut" style="--_size: 150px; --_thickness: 22px; --s1: 42; --s2: 28; --s3: 18;">
+    <div class="vk-donut-center"><strong>88%</strong><span>Allocated</span></div>
+  </div>
+  <div class="vk-gauge" id="gauge" style="--val: 84; --c: var(--vk-c-3); width: 160px; height: 80px;">
+    <div class="vk-gauge-readout"><strong id="gauge-value">84</strong><span> / 100</span></div>
+  </div>
+</div>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-donut">Copy</button><pre><code data-source-of="demo-donut"></code></pre></div></details>
+          </article>
+
+          <article class="demo-card vk-scope">
+            <header class="demo-head">
+              <div>
+                <h3>Funnel bars</h3>
+                <p>Labels stack above the bars automatically when the card gets narrow.</p>
+              </div>
+              <span class="demo-tag">.vk-hbar</span>
+            </header>
+            <div class="demo-chart" id="demo-hbar">
+<ul class="vk-chart vk-hbar" id="funnel">
+  <li style="--val: 100; --c: var(--vk-c-1);"><span class="vk-hbar-label">Visits</span><div class="vk-hbar-track"><div class="vk-hbar-fill"></div></div><span class="vk-hbar-val">100%</span></li>
+  <li style="--val: 72; --c: var(--vk-c-2);"><span class="vk-hbar-label">Sign-ups</span><div class="vk-hbar-track"><div class="vk-hbar-fill"></div></div><span class="vk-hbar-val">72%</span></li>
+  <li style="--val: 54; --c: var(--vk-c-3);"><span class="vk-hbar-label">Activated</span><div class="vk-hbar-track"><div class="vk-hbar-fill"></div></div><span class="vk-hbar-val">54%</span></li>
+  <li style="--val: 38; --c: var(--vk-c-4);"><span class="vk-hbar-label">Paid</span><div class="vk-hbar-track"><div class="vk-hbar-fill"></div></div><span class="vk-hbar-val">38%</span></li>
+</ul>
+            </div>
+            <details class="demo-code"><summary>View HTML</summary><div class="demo-code-body"><button class="copy-button" type="button" data-copy-from="demo-hbar">Copy</button><pre><code data-source-of="demo-hbar"></code></pre></div></details>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" id="reference" aria-labelledby="reference-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Reference</span>
+          <h2 id="reference-title">Classes, properties and tokens.</h2>
+          <p>Values are plain numbers from 0 to 100 unless noted. Every chart also accepts <code>--c</code> on an item to set its colour.</p>
+        </div>
+
+        <div class="reference-block card">
+          <h3>Chart types</h3>
+          <div class="table-scroll">
+            <table class="reference-table">
+              <thead><tr><th scope="col">Class</th><th scope="col">Markup</th><th scope="col">Properties &amp; attributes</th></tr></thead>
+              <tbody>
+                <tr><td><code>.vk-chart.vk-bar</code></td><td><code>&lt;ul&gt;</code> of <code>&lt;li&gt;</code>, or a <code>&lt;table&gt;</code> with <code>&lt;tr&gt;</code> rows</td><td><code>--val</code>, <code>data-label</code>, <code>data-value</code>, <code>data-alert="high"</code>, <code>data-series</code></td></tr>
+                <tr><td><code>.vk-bar-multi</code></td><td>Each <code>&lt;li&gt;</code> holds <code>.vk-seg</code> segments</td><td><code>--val</code> per segment; add <code>.vk-grouped</code> for side-by-side bars</td></tr>
+                <tr><td><code>.vk-chart.vk-hbar</code></td><td><code>&lt;li&gt;</code> with <code>.vk-hbar-label</code>, <code>.vk-hbar-track &gt; .vk-hbar-fill</code>, <code>.vk-hbar-val</code></td><td><code>--val</code></td></tr>
+                <tr><td><code>.vk-chart.vk-radar</code></td><td><code>&lt;li&gt;</code> with <code>.vk-radar-stem</code> and <code>.vk-radar-point</code></td><td><code>--total</code> on the list; <code>--i</code> (0-based index), <code>--val</code>, <code>data-label</code> per item</td></tr>
+                <tr><td><code>.vk-chart.vk-heatmap</code></td><td>Grid of <code>.vk-heatmap-col-header</code>, <code>.vk-heatmap-label</code> and <code>.vk-heatmap-cell</code></td><td><code>--cols</code> on the grid; <code>--val</code> per cell</td></tr>
+                <tr><td><code>.vk-chart.vk-range</code></td><td><code>.vk-range-row</code> containing <code>.vk-range-track</code> with whisker, box and median</td><td><code>--min</code>, <code>--q1</code>, <code>--med</code>, <code>--q3</code>, <code>--max</code></td></tr>
+                <tr><td><code>.vk-donut</code></td><td>Element with an optional <code>.vk-donut-center</code></td><td><code>--s1</code>, <code>--s2</code>, <code>--s3</code> (segment percentages), <code>--_size</code>, <code>--_thickness</code></td></tr>
+                <tr><td><code>.vk-gauge</code></td><td>Element with an optional <code>.vk-gauge-readout</code></td><td><code>--val</code>, <code>--c</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="reference-columns">
+          <div class="reference-block card">
+            <h3>Modifiers &amp; helpers</h3>
+            <dl class="reference-list">
+              <div><dt><code>.vk-scope</code></dt><dd>Wrapper that applies fonts, colours, legend filtering and the <code>vk-card</code> container query.</dd></div>
+              <div><dt><code>.vk-grid-y</code> / <code>.vk-grid-x</code></dt><dd>Horizontal or vertical background gridlines.</dd></div>
+              <div><dt><code>--target</code> + <code>data-target-label</code></dt><dd>Draws a labelled threshold line on bar charts.</dd></div>
+              <div><dt><code>.vk-values-visible</code></dt><dd>Always show value pills instead of only on hover.</dd></div>
+              <div><dt><code>.vk-legend</code>, <code>.vk-legend-item[data-series]</code></dt><dd>Hovering a legend item dims every other series with <code>:has()</code>.</dd></div>
+              <div><dt><code>.vk-sr-only</code></dt><dd>Keeps table cells readable by screen readers while hidden visually.</dd></div>
+            </dl>
+          </div>
+          <div class="reference-block card">
+            <h3>Theme tokens</h3>
+            <dl class="reference-list">
+              <div><dt><code>--vk-seed</code></dt><dd>Brand colour; also the first series colour and the heatmap base.</dd></div>
+              <div><dt><code>--vk-c-1</code> … <code>--vk-c-5</code>, <code>--vk-c-danger</code></dt><dd>Series palette and alert colour.</dd></div>
+              <div><dt><code>--vk-bg</code>, <code>--vk-surface</code>, <code>--vk-text</code>, <code>--vk-text-muted</code></dt><dd>Surface and text colours. Dark by default; add <code>data-theme="light"</code> to any ancestor.</dd></div>
+              <div><dt><code>--vk-radius</code>, <code>--vk-gap</code>, <code>--vk-chart-height</code></dt><dd>Shape and spacing.</dd></div>
+              <div><dt><code>--vk-duration</code>, <code>--vk-ease</code></dt><dd>Timing for value transitions.</dd></div>
+              <div><dt><code>--vk-font-sans</code>, <code>--vk-font-mono</code></dt><dd>Typefaces for labels and numbers.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="code-window">
+          <div class="code-window-bar"><span></span><span></span><span></span><small>Theming example</small></div>
+          <pre><code>:root {
+  --vk-seed: #e63e14;
+  --vk-c-2: #0ea5e9;
+  --vk-radius: 10px;
+  --vk-chart-height: 300px;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Why native CSS</span>
+          <h2 id="why-title">Built on modern CSS, not JavaScript.</h2>
+        </div>
+        <div class="why-grid">
+          <article class="card why-card"><code>@property</code><h3>Animated data</h3><p>Typed custom properties let <code>--val</code> transition smoothly whenever your data changes.</p></article>
+          <article class="card why-card"><code>sin() · cos()</code><h3>Real geometry</h3><p>Radar points sit on true polar coordinates calculated by the browser.</p></article>
+          <article class="card why-card"><code>color-mix(in oklch)</code><h3>One seed colour</h3><p>Heatmaps, borders and hover states are derived from a single brand colour.</p></article>
+          <article class="card why-card"><code>:has()</code><h3>Zero-JS filtering</h3><p>Hover a legend item and every other series fades, with no event listeners.</p></article>
+          <article class="card why-card"><code>@container</code><h3>Card-aware</h3><p>Charts adapt to the width of their card, not the browser window.</p></article>
+          <article class="card why-card"><code>@layer</code><h3>No specificity wars</h3><p>Everything lives in <code>vektor.*</code> cascade layers, so your own styles always win.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-tight" aria-labelledby="support-title">
+      <div class="wrap support-grid">
+        <div>
+          <span class="section-kicker">Compatibility</span>
+          <h2 id="support-title">Works in every modern browser.</h2>
+          <p>Vektor.css relies on <code>@property</code>, trigonometric functions, <code>color-mix()</code>, <code>:has()</code>, container queries and cascade layers. Charts are plain lists and tables, so content stays readable anywhere and to assistive technology.</p>
+        </div>
+        <ul class="support-list">
+          <li class="card"><strong>Chrome &amp; Edge</strong><span>111+</span></li>
+          <li class="card"><strong>Safari</strong><span>16.4+</span></li>
+          <li class="card"><strong>Firefox</strong><span>128+</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section is-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ship your next chart without a chart library.</h2>
+          <p>Vektor.css is free and MIT licensed. Use it in personal and commercial projects.</p>
+          <div class="button-row">
+            <a class="button is-light" href="/vektor-1.0.0.css" download>Download v1.0.0</a>
+            <a class="button is-ghost-dark" href="#gallery">Browse the gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>

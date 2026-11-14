@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (C) 2026 Abhishek Sengar -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Resources: Official Specs, MDN Docs, Browser Support and Tools | csslib</title>
+  <meta name="description" content="A curated list of official CSS resources: W3C and CSS Working Group specifications, MDN reference and courses, Baseline and Can I use support data, browser release notes, validators and DevTools." />
+  <meta name="theme-color" content="#f5f6fa" />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://csslib.github.io/site/resources/" />
+  <meta property="og:url" content="https://csslib.github.io/site/resources/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="csslib" />
+  <meta property="og:title" content="CSS Resources: Official Specs, MDN Docs, Browser Support and Tools | csslib" />
+  <meta property="og:description" content="A curated list of official CSS resources: W3C and CSS Working Group specifications, MDN reference and courses, Baseline and Can I use support data, browser release notes, validators and DevTools." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/site/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" type="application/xml" href="/site/sitemap.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;display=swap" />
+  <link rel="stylesheet" href="/site/atelier/suite/styles/tokens.css" />
+  <link rel="stylesheet" href="/site/styles/site.css" />
+  <link rel="stylesheet" href="/site/styles/learn.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "CSS resources",
+  "url": "https://csslib.github.io/site/resources/",
+  "description": "Official CSS specifications, documentation, browser support data and tools, in one place.",
+  "dateModified": "2026-11-13",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "csslib",
+    "url": "https://csslib.github.io/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Abhishek Sengar"
+  }
+}
+  </script>
+  <script src="/site/scripts/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-bar">
+      <a class="brand" href="/" aria-label="csslib home">
+        <span class="brand-tile"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11.5 5.5c-2.6 0-3.8 1.3-3.8 3.9v3.4c0 1.6-.8 2.5-2.7 2.7v1c1.9.2 2.7 1.1 2.7 2.7v3.4c0 2.6 1.2 3.9 3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 5.5c2.6 0 3.8 1.3 3.8 3.9v3.4c0 1.6.8 2.5 2.7 2.7v1c-1.9.2-2.7 1.1-2.7 2.7v3.4c0 2.6-1.2 3.9-3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12.5" r="2.4" fill="#6366f1"/><circle cx="12.9" cy="18.4" r="2.4" fill="rgb(var(--kinetix-500-rgb))"/><circle cx="19.1" cy="18.4" r="2.4" fill="rgb(var(--specimen-500-rgb))"/></svg></span>
+        <span class="brand-text"><span class="brand-name">csslib</span><span class="brand-tagline">Open-source CSS projects</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="site-nav-link" type="button" popovertarget="atelier-menu" aria-expanded="false">Atelier <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg></button>
+        <a class="site-nav-link" href="/site/vektor/">Vektor.css</a>
+        <button class="site-nav-link" type="button" popovertarget="learn-menu" aria-expanded="false" aria-current="page">Learn <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg></button>
+        <a class="site-nav-link" href="/site/about/">About</a>
+      </nav>
+      <div class="site-header-actions">
+        <a class="button is-small" href="/#projects">Explore projects <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <button class="menu-button" type="button" popovertarget="mobile-menu" aria-expanded="false" aria-label="Menu"><span></span></button>
+    </div>
+    <div class="nav-popover studios-popover" id="atelier-menu" popover>
+      <a class="project-menu-head" href="/site/atelier/">
+        <span class="brand-tile is-small"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="rgb(var(--kinetix-500-rgb))"/><path d="M22.4 3.6c3.3-.2 6 2 6.1 5 .1 3.6-2.6 6.9-6.3 7.1-3.1.2-6-2-6.1-5-.1-3.4 3-6.9 6.3-7.1Z" fill="rgb(var(--chromaflow-500-rgb))"/><rect x="4" y="18" width="12" height="11" fill="rgb(var(--specimen-500-rgb))"/><path d="M22.5 17.5 29 29H16Z" fill="rgb(var(--intrinsicflow-500-rgb))"/></svg></span>
+        <span><strong>Atelier</strong><small>Four visual CSS studios · Overview →</small></span>
+      </a>
+      <ul class="studio-menu-grid">
+          <li>
+            <a class="studio-menu-item is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+              <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+              <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-specimen" href="/site/atelier/studios/css-property-playground/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+              <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+              <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="nav-popover learn-popover" id="learn-menu" popover>
+      <ul class="learn-menu-list">
+        <li>
+          <a class="studio-menu-item is-learn" href="/site/modern-css/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5 14.6 9.4 21.5 12 14.6 14.6 12 21.5 9.4 14.6 2.5 12 9.4 9.4Z"/></svg></span>
+            <span><strong>Modern CSS</strong><small>The newest CSS features, with live demos and browser support</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="studio-menu-item is-learn" href="/site/resources/">
+            <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.5h10.5L19 7v13.5H5Z"/></svg></span>
+            <span><strong>CSS resources</strong><small>Official specs, docs, support tables and tools</small></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-popover mobile-popover" id="mobile-menu" popover data-anchor="header">
+      <div class="mobile-menu-section">
+        <a class="project-menu-head" href="/site/atelier/">
+          <span class="brand-tile is-small"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="rgb(var(--kinetix-500-rgb))"/><path d="M22.4 3.6c3.3-.2 6 2 6.1 5 .1 3.6-2.6 6.9-6.3 7.1-3.1.2-6-2-6.1-5-.1-3.4 3-6.9 6.3-7.1Z" fill="rgb(var(--chromaflow-500-rgb))"/><rect x="4" y="18" width="12" height="11" fill="rgb(var(--specimen-500-rgb))"/><path d="M22.5 17.5 29 29H16Z" fill="rgb(var(--intrinsicflow-500-rgb))"/></svg></span>
+          <span><strong>Atelier</strong><small>Four visual CSS studios</small></span>
+        </a>
+        <ul class="studio-menu-grid">
+          <li>
+            <a class="studio-menu-item is-kinetix" href="/site/atelier/studios/css-animation-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/></svg></span>
+              <span><strong>Kinetix Studio</strong><small>CSS animation generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-chroma" href="/site/atelier/studios/css-gradient-generator/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 3.2c3.9-.3 7.9 2.3 8.2 6.3.4 4.6-3.1 9.9-8.3 10.9-4.5.8-9-2-9.3-6.4-.3-4.1 2.9-5.4 4.2-7.6 1.2-2 2.3-3 5.2-3.2Z"/></svg></span>
+              <span><strong>ChromaFlow</strong><small>CSS gradient generator</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-specimen" href="/site/atelier/studios/css-property-playground/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16"/></svg></span>
+              <span><strong>Specimen Lab</strong><small>CSS property playground</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="studio-menu-item is-intrinsic" href="/site/atelier/studios/css-layout-builder/">
+              <span class="shape-tile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 21 19.5H3Z"/></svg></span>
+              <span><strong>IntrinsicFlow</strong><small>CSS Grid &amp; Flexbox layout builder</small></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu-section">
+        <a class="mobile-menu-link" href="/site/vektor/">Vektor.css — CSS charting library</a>
+        <a class="mobile-menu-link" href="/site/modern-css/">Modern CSS — new features explained</a>
+        <a class="mobile-menu-link" href="/site/resources/">CSS resources — specs, docs and tools</a>
+        <a class="mobile-menu-link" href="/site/about/">About</a>
+        <a class="button" href="/#projects">Explore projects <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="is-learn">
+    <section class="learn-hero">
+      <div class="wrap learn-hero-grid">
+        <div class="learn-hero-copy">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">csslib</a><span aria-hidden="true">/</span><span>Learn</span><span aria-hidden="true">/</span><span aria-current="page">CSS resources</span>
+          </nav>
+          <span class="eyebrow"><span class="eyebrow-dot"></span>29 official and trusted links · Checked 13 November 2026</span>
+          <h1>CSS resources</h1>
+          <p class="learn-tagline">The official specs, docs and tools, in one place.</p>
+          <p class="learn-lead">A short, curated list of where CSS is defined, documented and tracked: the W3C and CSS Working Group specifications, MDN's reference, browser support data, and the release notes from Chrome, Firefox and Safari.</p>
+          <ul class="page-jump" aria-label="Jump to a section"><li><a href="#specifications">Specifications</a></li><li><a href="#references">Reference and learning</a></li><li><a href="#support">Browser support</a></li><li><a href="#browsers">From the browser makers</a></li><li><a href="#tools">Tools for writing and debugging CSS</a></li><li><a href="#accessibility">Accessibility</a></li></ul>
+        </div>
+        <aside class="support-key start-here card" aria-labelledby="start-here-title">
+          <h2 id="start-here-title">Not sure where to start?</h2>
+          <ul>
+            <li><strong>Looking up a property?</strong> Use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" rel="noopener">MDN CSS reference</a>.</li>
+            <li><strong>Can I ship this feature?</strong> Check <a href="https://webstatus.dev/" rel="noopener">Web Platform Status</a> or <a href="https://caniuse.com/" rel="noopener">Can I use</a>.</li>
+            <li><strong>How exactly should it behave?</strong> Read the <a href="https://drafts.csswg.org/" rel="noopener">editor's draft</a>.</li>
+            <li><strong>What's new in CSS?</strong> See our <a href="/site/modern-css/">Modern CSS guide</a>.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section is-tight">
+      <div class="wrap">
+        <section class="resource-group" id="specifications" aria-labelledby="specifications-title">
+          <div class="topic-head">
+            <span class="section-kicker">Standards</span>
+            <h2 id="specifications-title">Specifications</h2>
+            <p>Where CSS is defined. Editor's drafts show the latest thinking; the W3C pages show what is stable.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://www.w3.org/Style/CSS/" rel="noopener"><span class="resource-source">W3C</span><strong>CSS home at the W3C</strong><small>The W3C's starting point for CSS: news, the list of modules and how the language is developed.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://www.w3.org/Style/CSS/current-work" rel="noopener"><span class="resource-source">W3C</span><strong>CSS current work</strong><small>Every CSS module with its maturity level, from early drafts to finished recommendations.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://www.w3.org/TR/css-2026/" rel="noopener"><span class="resource-source">W3C</span><strong>CSS Snapshot 2026</strong><small>The official definition of what “CSS” means today: which modules are stable and which are ready to use.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://drafts.csswg.org/" rel="noopener"><span class="resource-source">CSSWG</span><strong>CSS editor's drafts</strong><small>The live, up-to-date text of every CSS specification, edited as the working group makes decisions.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://github.com/w3c/csswg-drafts" rel="noopener"><span class="resource-source">CSSWG</span><strong>CSS Working Group on GitHub</strong><small>Where new features are proposed and debated in public. Anyone can read the issues and join in.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://html.spec.whatwg.org/multipage/popover.html" rel="noopener"><span class="resource-source">WHATWG</span><strong>HTML Living Standard: popover</strong><small>The HTML side of popovers, the attribute that powers top-layer menus and tooltips.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="references" aria-labelledby="references-title">
+          <div class="topic-head">
+            <span class="section-kicker">Docs</span>
+            <h2 id="references-title">Reference and learning</h2>
+            <p>The most trusted documentation for every property, selector and function, and structured courses to learn them.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Web/CSS" rel="noopener"><span class="resource-source">MDN</span><strong>MDN: CSS</strong><small>Mozilla's CSS documentation home, with guides for every part of the language.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" rel="noopener"><span class="resource-source">MDN</span><strong>MDN: CSS reference</strong><small>An A to Z of every property, selector, at-rule and value, each with examples and a compatibility table.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" rel="noopener"><span class="resource-source">MDN</span><strong>MDN: CSS guides</strong><small>In-depth guides by module: grid, flexbox, colors, animations, anchor positioning and more.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" rel="noopener"><span class="resource-source">MDN</span><strong>MDN: CSS styling basics</strong><small>A beginner course covering selectors, the box model, the cascade and how to debug CSS.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" rel="noopener"><span class="resource-source">MDN</span><strong>MDN: CSS layout</strong><small>A course on normal flow, flexbox, grid, floats, positioning and responsive design.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://web.dev/learn/css" rel="noopener"><span class="resource-source">web.dev</span><strong>Learn CSS</strong><small>A free course from the Chrome team, from the box model to logical properties and functions.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="support" aria-labelledby="support-title">
+          <div class="topic-head">
+            <span class="section-kicker">Compatibility</span>
+            <h2 id="support-title">Browser support</h2>
+            <p>Check whether a feature works in the browsers your visitors use before you ship it.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://web.dev/baseline" rel="noopener"><span class="resource-source">web.dev</span><strong>Baseline</strong><small>A clear yes or no on whether a feature works across all major browsers, and since when.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://webstatus.dev/" rel="noopener"><span class="resource-source">W3C WebDX</span><strong>Web Platform Status</strong><small>Searchable Baseline status and test results for every web feature, kept up to date automatically.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://caniuse.com/" rel="noopener"><span class="resource-source">Community</span><strong>Can I use</strong><small>Detailed support tables by browser version, with usage statistics and known issues.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://wpt.fyi/interop-2026" rel="noopener"><span class="resource-source">WPT</span><strong>Interop 2026</strong><small>The yearly effort by browser makers to fix the same features everywhere, with live scores.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://github.com/web-platform-dx/web-features" rel="noopener"><span class="resource-source">W3C WebDX</span><strong>web-features</strong><small>The open data set behind Baseline, for tools and linters that check your CSS.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="browsers" aria-labelledby="browsers-title">
+          <div class="topic-head">
+            <span class="section-kicker">What&#x27;s new</span>
+            <h2 id="browsers-title">From the browser makers</h2>
+            <p>Release notes and blogs where new CSS features are announced first.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://developer.chrome.com/docs/css-ui" rel="noopener"><span class="resource-source">Chrome</span><strong>Chrome for Developers: CSS and UI</strong><small>Articles and guides on new CSS in Chrome, often with demos.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://chromestatus.com/" rel="noopener"><span class="resource-source">Chrome</span><strong>Chrome Platform Status</strong><small>What Chrome is building, shipping or removing, feature by feature.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://webkit.org/blog/" rel="noopener"><span class="resource-source">WebKit</span><strong>WebKit blog</strong><small>Safari's release notes and deep dives on new CSS features.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://webkit.org/status/" rel="noopener"><span class="resource-source">WebKit</span><strong>WebKit feature status</strong><small>The status of every web feature in WebKit, the engine behind Safari.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases" rel="noopener"><span class="resource-source">Mozilla</span><strong>Firefox release notes for developers</strong><small>What changed in each Firefox release for CSS, HTML and JavaScript.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://web.dev/blog" rel="noopener"><span class="resource-source">web.dev</span><strong>web.dev blog</strong><small>Monthly roundups of what landed in browsers, and what reached Baseline.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="tools" aria-labelledby="tools-title">
+          <div class="topic-head">
+            <span class="section-kicker">Tools</span>
+            <h2 id="tools-title">Tools for writing and debugging CSS</h2>
+            <p>Validators and the browser developer tools for inspecting layouts, colors and animations.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://jigsaw.w3.org/css-validator/" rel="noopener"><span class="resource-source">W3C</span><strong>CSS Validation Service</strong><small>Check a stylesheet for errors against the official CSS grammar.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://developer.chrome.com/docs/devtools/css" rel="noopener"><span class="resource-source">Chrome</span><strong>Chrome DevTools: CSS</strong><small>Inspect and edit styles, debug grid and flexbox, and work with colors and animations.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://firefox-source-docs.mozilla.org/devtools-user/" rel="noopener"><span class="resource-source">Mozilla</span><strong>Firefox DevTools</strong><small>Firefox's inspector, with grid, flexbox and font tools that many designers prefer.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://webkit.org/web-inspector/" rel="noopener"><span class="resource-source">WebKit</span><strong>Safari Web Inspector</strong><small>Safari's developer tools for debugging on macOS, iPhone and iPad.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="accessibility" aria-labelledby="accessibility-title">
+          <div class="topic-head">
+            <span class="section-kicker">Accessibility</span>
+            <h2 id="accessibility-title">Accessibility</h2>
+            <p>CSS decides color contrast, focus styles, motion and reading order, so it shapes who can use a page.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="https://www.w3.org/TR/WCAG22/" rel="noopener"><span class="resource-source">W3C</span><strong>WCAG 2.2</strong><small>The Web Content Accessibility Guidelines, the standard most accessibility laws point to.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="resource-card card" href="https://www.w3.org/WAI/" rel="noopener"><span class="resource-source">W3C</span><strong>Web Accessibility Initiative</strong><small>Tutorials, fundamentals and practical guidance for building accessible sites.</small><span class="resource-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+        <section class="resource-group" id="csslib" aria-labelledby="csslib-title">
+          <div class="topic-head">
+            <span class="section-kicker">From csslib</span>
+            <h2 id="csslib-title">Put it into practice</h2>
+            <p>Free tools from this site that turn these specs into something you can see and use.</p>
+          </div>
+          <ul class="resource-grid">
+            <li><a class="resource-card card" href="/site/modern-css/"><span class="resource-source">csslib</span><strong>Modern CSS guide</strong><small>The newest CSS features with live demos, examples and browser support.</small><span class="resource-arrow" aria-hidden="true">→</span></a></li>
+            <li><a class="resource-card card" href="/site/atelier/"><span class="resource-source">csslib</span><strong>Atelier</strong><small>Four visual studios for CSS animation, gradients, properties and layout.</small><span class="resource-arrow" aria-hidden="true">→</span></a></li>
+            <li><a class="resource-card card" href="/site/vektor/"><span class="resource-source">csslib</span><strong>Vektor.css</strong><small>Charts in pure CSS, built on @property, trigonometry and container queries.</small><span class="resource-arrow" aria-hidden="true">→</span></a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/" aria-label="csslib home">
+        <span class="brand-tile"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11.5 5.5c-2.6 0-3.8 1.3-3.8 3.9v3.4c0 1.6-.8 2.5-2.7 2.7v1c1.9.2 2.7 1.1 2.7 2.7v3.4c0 2.6 1.2 3.9 3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 5.5c2.6 0 3.8 1.3 3.8 3.9v3.4c0 1.6.8 2.5 2.7 2.7v1c-1.9.2-2.7 1.1-2.7 2.7v3.4c0 2.6-1.2 3.9-3.8 3.9" fill="none" stroke="#0d0f1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12.5" r="2.4" fill="#6366f1"/><circle cx="12.9" cy="18.4" r="2.4" fill="rgb(var(--kinetix-500-rgb))"/><circle cx="19.1" cy="18.4" r="2.4" fill="rgb(var(--specimen-500-rgb))"/></svg></span>
+        <span class="brand-text"><span class="brand-name">csslib</span><span class="brand-tagline">Open-source CSS projects</span></span>
+      </a>
+          <p>A growing collection of free, open-source CSS projects: visual studios, libraries and experiments that run in your browser and stay out of your build.</p>
+        </div>
+        <div class="footer-column">
+          <h2>Atelier</h2>
+          <ul>
+            <li><a href="/site/atelier/">All studios</a></li>
+            <li><a href="/site/atelier/studios/css-animation-generator/">Kinetix Studio</a></li>
+            <li><a href="/site/atelier/studios/css-gradient-generator/">ChromaFlow</a></li>
+            <li><a href="/site/atelier/studios/css-property-playground/">Specimen Lab</a></li>
+            <li><a href="/site/atelier/studios/css-layout-builder/">IntrinsicFlow</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>Vektor.css</h2>
+          <ul>
+            <li><a href="/site/vektor/">Documentation</a></li>
+            <li><a href="/site/vektor/#gallery">Chart gallery</a></li>
+            <li><a href="/vektor-1.0.0.css" download>Download v1.0.0</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <ul>
+            <li><a href="/site/modern-css/">Modern CSS</a></li>
+            <li><a href="/site/resources/">CSS resources</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" rel="noopener">MDN CSS docs</a></li>
+            <li><a href="https://drafts.csswg.org/" rel="noopener">CSS specifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>csslib</h2>
+          <ul>
+            <li><a href="/">All projects</a></li>
+            <li><a href="/site/about/">About</a></li>
+            <li><a href="https://github.com/monad-one" rel="noopener me">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abhishek-sengar" rel="noopener me">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Abhishek Sengar. All csslib projects are released under the <a href="/LICENSE">MIT License</a>.</span>
+        <span>Plain HTML and CSS, with a little JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

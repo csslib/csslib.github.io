@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: MIT
+// Copyright (C) 2026 Abhishek Sengar
+
+export const QUICK_ENCYCLOPEDIA_ALIASES = [
+  { propertyLabel: 'clip-path (polygon / circle / inset)', targetId: 'clip-path-polygon', note: 'N-vertex vector clipping' },
+  { propertyLabel: 'shape-outside / shape-margin', targetId: 'shape-outside', note: 'Non-rectangular float text wrapping' },
+  { propertyLabel: 'mask-image / -webkit-mask-image', targetId: 'mask-image-gradient', note: 'Alpha gradient feathering' },
+  { propertyLabel: 'border-radius (8-value elliptical)', targetId: 'border-radius', note: 'Single & 8-axis corner radii' },
+  { propertyLabel: 'border-image / border-image-slice', targetId: 'border-image-slice', note: '9-slice border cutter & outset' },
+  { propertyLabel: 'padding-inline / padding-block', targetId: 'padding-margin-box', note: 'Directional box spacing' },
+  { propertyLabel: 'margin-inline / margin-block', targetId: 'padding-margin-box', note: 'Outer box spacing & collapse' },
+  { propertyLabel: 'clamp() / min() / max()', targetId: 'clamp-fluid-calc', note: 'Fluid viewport typography & sizing' },
+  { propertyLabel: 'aspect-ratio', targetId: 'aspect-ratio', note: 'Intrinsic proportional dimensions' },
+  { propertyLabel: 'outline / outline-offset', targetId: 'outline-offset', note: 'Non-layout focus ring geometry' },
+  { propertyLabel: 'object-fit / object-position', targetId: 'object-position', note: 'Replaced media 2D focal crop' },
+  { propertyLabel: 'box-shadow (Multi-Layer Stack)', targetId: 'box-shadow', note: 'Unlimited outer & inset shadow layers' },
+  { propertyLabel: 'text-shadow (Multi-Layer 3D / Neon)', targetId: 'text-shadow', note: 'Multi-layer glyph extrusion & glow' },
+  { propertyLabel: 'linear-gradient / radial-gradient / conic-gradient', targetId: 'linear-gradient', note: 'Unlimited color stops & repeating modes' },
+  { propertyLabel: 'background-size / background-position', targetId: 'background-size-pos', note: 'Pattern tiling & offset coordinates' },
+  { propertyLabel: 'mix-blend-mode / isolation', targetId: 'mix-blend-mode', note: 'Optical pixel blending modes' },
+  { propertyLabel: 'transform (translate / rotate / scale / skew)', targetId: 'transform-2d', note: '2D affine matrix transform' },
+  { propertyLabel: 'transform-origin', targetId: 'transform-origin', note: '2D/3D pivot pin coordinates' },
+  { propertyLabel: 'perspective / rotateX / rotateY / translateZ', targetId: 'perspective-3d', note: '3D camera depth frustum' },
+  { propertyLabel: 'backdrop-filter', targetId: 'backdrop-filter', note: 'Transmissive frosted glass refraction' },
+  { propertyLabel: 'filter (drop-shadow / hue-rotate / contrast)', targetId: 'filter-pipeline', note: 'Sequential optical pixel shaders' },
+  { propertyLabel: 'line-height / letter-spacing / word-spacing', targetId: 'typography-metrics', note: 'Typographic leading & tracking' },
+  { propertyLabel: 'font-variation-settings (Variable Fonts)', targetId: 'font-variation-settings', note: 'Continuous wght & slnt axes' },
+  { propertyLabel: 'text-underline-offset / text-decoration-thickness', targetId: 'text-underline-offset', note: 'Baseline underline anatomy' },
+  { propertyLabel: '-webkit-line-clamp / text-overflow', targetId: 'line-clamp-ellipsis', note: 'Multi-line paragraph truncation' },
+  { propertyLabel: 'column-count / column-gap / column-rule', targetId: 'multi-column', note: 'Multi-column magazine text flow' },
+  { propertyLabel: 'flex-grow / flex-shrink / flex-basis', targetId: 'flex-grow-shrink', note: 'Dynamic N-item Flexbox builder' },
+  { propertyLabel: 'grid-template-columns / grid-column / gap', targetId: 'grid-template-layout', note: 'Dynamic N-track Bento Grid builder' },
+  { propertyLabel: 'transition-timing-function (cubic-bezier)', targetId: 'cubic-bezier-timing', note: 'Custom velocity & spring curves' },
+  { propertyLabel: '@keyframes / animation-duration / play-state', targetId: 'keyframes-animation', note: 'Multi-stage keyframe choreography' },
+  { propertyLabel: 'offset-path / offset-distance / offset-rotate', targetId: 'offset-path-motion', note: 'SVG motion path trajectory' },
+  { propertyLabel: 'scroll-snap-type / scroll-padding-top', targetId: 'scroll-padding-margin', note: 'Scroll snap & sticky header buffer' },
+  { propertyLabel: 'z-index', targetId: 'z-index-stacking', note: '3D paint stacking order' }
+];

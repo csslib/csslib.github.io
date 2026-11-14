@@ -1,0 +1,87 @@
+/* SPDX-License-Identifier: MIT */
+/* Copyright (C) 2026 Abhishek Sengar */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.stage-dot-bg {
+  background-color: #f1f5f9;
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.resizer-bar:hover .resizer-pill,
+.resizer-bar.dragging .resizer-pill {
+  background-color: #255deb;
+  height: 56px;
+}
+
+.if-preview-node {
+  position: relative;
+  transition: box-shadow 0.12s ease, outline-color 0.12s ease;
+  cursor: pointer;
+}
+.if-preview-node:hover {
+  outline: 1.5px solid rgba(37, 93, 235, 0.45);
+  outline-offset: -1px;
+}
+.if-preview-node.if-selected {
+  outline: 2px solid #255deb !important;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 3px rgba(37, 93, 235, 0.12);
+}
+
+.if-guides-active .if-preview-node[data-node-kind="structure"] {
+  outline: 1px dashed rgba(14, 165, 233, 0.45);
+  outline-offset: -1px;
+}
+
+.if-node-hud {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  z-index: 45;
+  pointer-events: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+}
+.if-preview-node.if-selected > .if-node-hud {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

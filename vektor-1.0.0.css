@@ -1,0 +1,712 @@
+/* SPDX-License-Identifier: MIT */
+/* Copyright (C) 2026 Abhishek Sengar */
+
+@layer vektor.tokens, vektor.registered, vektor.base, vektor.axes, vektor.charts, vektor.interactions, vektor.utilities;
+
+@property --val {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --val-2 {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --val-3 {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --min {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --max {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 100;
+}
+@property --target {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: -1;
+}
+@property --vk-sweep {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+
+@layer vektor.tokens {
+  :root {
+    --vk-seed: #6366f1;
+    --vk-c-1: var(--vk-seed);
+    --vk-c-2: #06b6d4;
+    --vk-c-3: #10b981;
+    --vk-c-4: #f59e0b;
+    --vk-c-5: #ec4899;
+    --vk-c-danger: #ef4444;
+
+    --vk-bg: #0f111a;
+    --vk-surface: #161926;
+    --vk-surface-elevated: #1e2235;
+    --vk-text: #f1f5f9;
+    --vk-text-muted: #94a3b8;
+    --vk-grid-color: color-mix(in oklch, var(--vk-text) 10%, transparent);
+    --vk-axis-color: color-mix(in oklch, var(--vk-text) 24%, transparent);
+
+    --vk-radius: 6px;
+    --vk-gap: 0.65rem;
+    --vk-chart-height: 250px;
+    --vk-duration: 650ms;
+    --vk-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --vk-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --vk-font-mono: 'JetBrains Mono', monospace;
+  }
+
+  [data-theme="light"] {
+    --vk-bg: #f8fafc;
+    --vk-surface: #ffffff;
+    --vk-surface-elevated: #f1f5f9;
+    --vk-text: #0f172a;
+    --vk-text-muted: #64748b;
+    --vk-grid-color: color-mix(in oklch, var(--vk-text) 9%, transparent);
+    --vk-axis-color: color-mix(in oklch, var(--vk-text) 22%, transparent);
+  }
+}
+
+@layer vektor.base {
+  .vk-scope {
+    container-type: inline-size;
+    container-name: vk-card;
+    position: relative;
+    font-family: var(--vk-font-sans);
+    color: var(--vk-text);
+    box-sizing: border-box;
+  }
+
+  .vk-scope *,
+  .vk-scope *::before,
+  .vk-scope *::after {
+    box-sizing: border-box;
+  }
+
+  .vk-chart {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .vk-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .vk-chart:not(:has(> *, tbody > tr))::after {
+    content: "No dataset points provided";
+    display: grid;
+    place-items: center;
+    height: var(--vk-chart-height);
+    color: var(--vk-text-muted);
+    font-size: 0.875rem;
+    border: 1px dashed var(--vk-axis-color);
+    border-radius: var(--vk-radius);
+  }
+}
+
+@layer vektor.axes {
+  .vk-grid-y {
+    background-image: linear-gradient(
+      to bottom,
+      var(--vk-grid-color) 1px,
+      transparent 1px
+    );
+    background-size: 100% 25%;
+    background-position: 0 0;
+    border-bottom: 1px solid var(--vk-axis-color);
+  }
+
+  .vk-grid-x {
+    background-image: linear-gradient(
+      to right,
+      var(--vk-grid-color) 1px,
+      transparent 1px
+    );
+    background-size: 25% 100%;
+  }
+
+  .vk-chart[style*="--target"]::before {
+    content: attr(data-target-label);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--target) * 1%);
+    border-bottom: 2px dashed var(--vk-c-danger);
+    color: var(--vk-c-danger);
+    font-family: var(--vk-font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 0.4rem;
+    padding-bottom: 2px;
+    pointer-events: none;
+    z-index: 4;
+    transition: bottom var(--vk-duration) var(--vk-ease);
+  }
+}
+
+@layer vektor.charts {
+
+  .vk-bar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(28px, 1fr);
+    align-items: end;
+    gap: var(--vk-gap);
+    height: var(--vk-chart-height);
+    padding-top: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  table.vk-bar tbody {
+    display: contents;
+  }
+  table.vk-bar thead {
+    display: none;
+  }
+
+  .vk-bar > li,
+  table.vk-bar tbody > tr {
+    --_c: var(--c, var(--vk-c-1));
+    --_pct: clamp(0, var(--val), 100);
+    position: relative;
+    height: calc(var(--_pct) * 1%);
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--_c) 95%, white) 0%,
+      color-mix(in oklch, var(--_c) 72%, transparent) 100%
+    );
+    border: 1px solid color-mix(in oklch, var(--_c) 88%, white);
+    border-bottom: none;
+    border-radius: var(--vk-radius) var(--vk-radius) 0 0;
+    transition:
+      height var(--vk-duration) var(--vk-ease),
+      opacity 220ms ease,
+      transform 200ms ease,
+      filter 200ms ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .vk-bar > [data-alert="high"],
+  table.vk-bar tbody > tr[data-alert="high"] {
+    --_c: var(--vk-c-danger);
+  }
+
+  .vk-bar > li::after,
+  table.vk-bar tbody > tr::after {
+    content: attr(data-label);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: var(--vk-text-muted);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .vk-bar > li::before,
+  table.vk-bar tbody > tr::before {
+    content: attr(data-value);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    font-family: var(--vk-font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--vk-text);
+    background: var(--vk-surface-elevated);
+    border: 1px solid var(--vk-axis-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .vk-bar.vk-values-visible > li::before,
+  table.vk-bar.vk-values-visible tbody > tr::before,
+  .vk-bar > li:hover::before,
+  table.vk-bar tbody > tr:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .vk-bar-multi > li {
+    height: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+
+  .vk-bar-multi.vk-grouped > li {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  .vk-bar-multi .vk-seg {
+    --_c: var(--c, var(--vk-c-1));
+    height: calc(clamp(0, var(--val), 100) * 1%);
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--_c) 95%, white),
+      color-mix(in oklch, var(--_c) 75%, transparent)
+    );
+    border-radius: calc(var(--vk-radius) * 0.65);
+    transition:
+      height var(--vk-duration) var(--vk-ease),
+      opacity 200ms ease,
+      filter 200ms ease;
+    position: relative;
+  }
+
+  .vk-hbar {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .vk-hbar > li {
+    --_c: var(--c, var(--vk-c-1));
+    display: grid;
+    grid-template-columns: minmax(95px, 130px) 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .vk-hbar .vk-hbar-label {
+    color: var(--vk-text);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .vk-hbar .vk-hbar-track {
+    height: 1.35rem;
+    background: color-mix(in oklch, var(--vk-text) 7%, transparent);
+    border-radius: var(--vk-radius);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .vk-hbar .vk-hbar-fill {
+    height: 100%;
+    width: calc(clamp(0, var(--val), 100) * 1%);
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--_c) 75%, transparent),
+      var(--_c)
+    );
+    border-radius: var(--vk-radius);
+    transition: width var(--vk-duration) var(--vk-ease);
+  }
+
+  .vk-hbar .vk-hbar-val {
+    font-family: var(--vk-font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--vk-text-muted);
+    min-width: 3.2rem;
+    text-align: right;
+  }
+
+  .vk-radar {
+    --_size: min(100%, 270px);
+    width: var(--_size);
+    aspect-ratio: 1;
+    margin: 1rem auto;
+    position: relative;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, transparent 24.5%, var(--vk-grid-color) 25%, transparent 25.5%),
+      radial-gradient(circle, transparent 49.5%, var(--vk-grid-color) 50%, transparent 50.5%),
+      radial-gradient(circle, transparent 74.5%, var(--vk-grid-color) 75%, transparent 75.5%);
+    border: 1px solid var(--vk-axis-color);
+  }
+
+  .vk-radar > li {
+    --_angle: calc((360deg / var(--total, 6)) * var(--i, 0) - 90deg);
+    --_r: calc((clamp(0, var(--val), 100) / 100) * 50%);
+    --_x: calc(50% + (var(--_r) * cos(var(--_angle))));
+    --_y: calc(50% + (var(--_r) * sin(var(--_angle))));
+    --_lx: calc(50% + (63% * cos(var(--_angle))));
+    --_ly: calc(50% + (63% * sin(var(--_angle))));
+
+    position: absolute;
+     inset: 0;
+    pointer-events: none;
+  }
+
+  .vk-radar > li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 1px;
+    background: var(--vk-grid-color);
+    transform-origin: 0 50%;
+    transform: rotate(var(--_angle));
+  }
+
+  .vk-radar > li::after {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--_lx);
+    top: var(--_ly);
+    transform: translate(-50%, -50%);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--vk-text-muted);
+    white-space: nowrap;
+    background: color-mix(in oklch, var(--vk-surface) 85%, transparent);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  .vk-radar .vk-radar-point {
+    position: absolute;
+    left: var(--_x);
+    top: var(--_y);
+    width: 12px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--c, var(--vk-c-1));
+    border: 2px solid var(--vk-surface);
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--c, var(--vk-c-1)) 30%, transparent);
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 3;
+    transition:
+      left var(--vk-duration) var(--vk-ease),
+      top var(--vk-duration) var(--vk-ease),
+      transform 180ms ease;
+  }
+
+  .vk-radar .vk-radar-point:hover {
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+
+  .vk-radar .vk-radar-stem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 3px;
+    width: var(--_r);
+    background: linear-gradient(90deg, transparent, var(--c, var(--vk-c-1)));
+    transform-origin: 0 50%;
+    transform: rotate(var(--_angle));
+    border-radius: 2px;
+    transition: width var(--vk-duration) var(--vk-ease);
+  }
+
+  .vk-donut {
+    --_size: 200px;
+    --_thickness: 28px;
+    width: var(--_size);
+    height: var(--_size);
+    margin: 0.5rem auto;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+      from 0deg,
+      var(--vk-c-1) 0% calc(var(--s1, 35) * 1%),
+      var(--vk-c-2) calc(var(--s1, 35) * 1%) calc((var(--s1, 35) + var(--s2, 25)) * 1%),
+      var(--vk-c-3) calc((var(--s1, 35) + var(--s2, 25)) * 1%) calc((var(--s1, 35) + var(--s2, 25) + var(--s3, 22)) * 1%),
+      var(--vk-c-4) calc((var(--s1, 35) + var(--s2, 25) + var(--s3, 22)) * 1%) 100%
+    );
+    display: grid;
+    place-items: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .vk-donut::before {
+    content: "";
+    position: absolute;
+    inset: var(--_thickness);
+    background: var(--vk-surface);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .vk-donut-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .vk-donut-center strong {
+    display: block;
+    font-size: 1.45rem;
+    font-family: var(--vk-font-mono);
+    font-weight: 700;
+  }
+
+  .vk-donut-center span {
+    font-size: 0.72rem;
+    color: var(--vk-text-muted);
+  }
+
+  .vk-gauge {
+    --_val: clamp(0, var(--val), 100);
+    --_c: var(--c, var(--vk-c-3));
+    width: 220px;
+    height: 110px;
+    margin: 0.75rem auto 0.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vk-gauge::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 270deg,
+      var(--_c) 0deg calc(var(--_val) * 1.8deg),
+      color-mix(in oklch, var(--vk-text) 10%, transparent) calc(var(--_val) * 1.8deg) 180deg,
+      transparent 180deg 360deg
+    );
+    -webkit-mask: radial-gradient(circle, transparent 62%, #000 63%);
+    mask: radial-gradient(circle, transparent 62%, #000 63%);
+  }
+
+  .vk-gauge-readout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .vk-heatmap {
+    --vk-heat-color: var(--vk-c-1);
+    display: grid;
+    grid-template-columns: auto repeat(var(--cols, 7), 1fr);
+    gap: 5px;
+    align-items: center;
+  }
+
+  .vk-heatmap-cell {
+    aspect-ratio: 1.35 / 1;
+    border-radius: calc(var(--vk-radius) * 0.7);
+    background: color-mix(
+      in oklch,
+      var(--vk-heat-color) calc(clamp(6, var(--val), 100) * 1%),
+      color-mix(in oklch, var(--vk-text) 5%, transparent)
+    );
+    border: 1px solid color-mix(in oklch, var(--vk-heat-color) calc(var(--val) * 0.5%), transparent);
+    display: grid;
+    place-items: center;
+    font-family: var(--vk-font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: color-mix(in oklch, var(--vk-text) 90%, transparent);
+    position: relative;
+    cursor: pointer;
+    transition:
+      background-color var(--vk-duration) var(--vk-ease),
+      transform 150ms ease;
+  }
+
+  .vk-heatmap-cell:hover {
+    transform: scale(1.08);
+    z-index: 3;
+    border-color: var(--vk-text);
+  }
+
+  .vk-heatmap-label {
+    font-size: 0.72rem;
+    color: var(--vk-text-muted);
+    padding-right: 0.5rem;
+    font-weight: 500;
+  }
+
+  .vk-heatmap-col-header {
+    font-size: 0.7rem;
+    color: var(--vk-text-muted);
+    text-align: center;
+    padding-bottom: 0.25rem;
+  }
+
+  .vk-range {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .vk-range-row {
+    display: grid;
+    grid-template-columns: minmax(90px, 120px) 1fr 70px;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .vk-range-track {
+    height: 1.5rem;
+    position: relative;
+    background: color-mix(in oklch, var(--vk-text) 5%, transparent);
+    border-radius: var(--vk-radius);
+  }
+
+  .vk-range-whisker {
+    position: absolute;
+    top: 50%;
+    left: calc(var(--min, 10) * 1%);
+    width: calc((var(--max, 90) - var(--min, 10)) * 1%);
+    height: 2px;
+    background: var(--vk-text-muted);
+    transform: translateY(-50%);
+    transition: left var(--vk-duration) var(--vk-ease), width var(--vk-duration) var(--vk-ease);
+  }
+
+  .vk-range-whisker::before,
+  .vk-range-whisker::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 2px;
+    height: 10px;
+    background: var(--vk-text-muted);
+  }
+  .vk-range-whisker::before { left: 0; }
+  .vk-range-whisker::after { right: 0; }
+
+  .vk-range-box {
+    --_c: var(--c, var(--vk-c-2));
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: calc(var(--q1, 25) * 1%);
+    width: calc((var(--q3, 70) - var(--q1, 25)) * 1%);
+    background: color-mix(in oklch, var(--_c) 80%, transparent);
+    border: 1px solid var(--_c);
+    border-radius: 4px;
+    transition: left var(--vk-duration) var(--vk-ease), width var(--vk-duration) var(--vk-ease);
+  }
+
+  .vk-range-median {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: calc(var(--med, 45) * 1%);
+    width: 2px;
+    background: #fff;
+    z-index: 2;
+    transition: left var(--vk-duration) var(--vk-ease);
+  }
+}
+
+@layer vektor.interactions {
+  .vk-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .vk-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.76rem;
+    font-weight: 500;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--vk-text) 6%, transparent);
+    border: 1px solid transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: all 160ms ease;
+  }
+
+  .vk-legend-item:hover {
+    border-color: var(--vk-axis-color);
+    background: color-mix(in oklch, var(--vk-text) 12%, transparent);
+  }
+
+  .vk-legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--c, var(--vk-c-1));
+  }
+
+  .vk-scope:has(.vk-legend-item[data-series="1"]:hover) [data-series]:not([data-series="1"]),
+  .vk-scope:has(.vk-legend-item[data-series="2"]:hover) [data-series]:not([data-series="2"]),
+  .vk-scope:has(.vk-legend-item[data-series="3"]:hover) [data-series]:not([data-series="3"]) {
+    opacity: 0.18;
+    filter: grayscale(65%);
+  }
+
+  .vk-bar:hover > li:not(:hover),
+  table.vk-bar tbody:hover > tr:not(:hover) {
+    opacity: 0.55;
+  }
+
+  @container vk-card (max-width: 420px) {
+    .vk-bar {
+      gap: 0.35rem;
+      height: 190px;
+    }
+    .vk-bar > li::after,
+    table.vk-bar tbody > tr::after {
+      font-size: 0.65rem;
+      transform: translateX(-50%) rotate(-32deg);
+      transform-origin: top center;
+    }
+    .vk-hbar > li {
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem;
+    }
+    .vk-hbar .vk-hbar-track {
+      grid-column: 1 / -1;
+      height: 1rem;
+    }
+    .vk-range-row {
+      grid-template-columns: 1fr auto;
+    }
+    .vk-range-track {
+      grid-column: 1 / -1;
+    }
+  }
+}

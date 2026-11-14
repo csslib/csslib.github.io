@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (C) 2026 Abhishek Sengar -->
+<html lang="en" class="h-full bg-slate-50 text-slate-900 antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specimen Lab — Interactive CSS Property Explorer | Atelier</title>
+  <meta name="description" content="Explore numeric and complex CSS properties — shadows, filters, clip-paths, transforms, typography and more — with live visual controls and copy-ready code." />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="canonical" href="https://csslib.github.io/site/atelier/css-property-playground/" />
+  <meta property="og:url" content="https://csslib.github.io/site/atelier/css-property-playground/" />
+  <link rel="icon" href="../suite/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../suite/styles/tokens.css" />
+  <link rel="stylesheet" href="../suite/styles/reset.css" />
+  <link rel="stylesheet" href="../suite/styles/utilities.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-states.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-breakpoints.css" />
+  <link rel="stylesheet" href="../suite/suite.css" />
+  <link rel="stylesheet" href="../suite/styles/controls.css" />
+  <script src="../suite/suite.js" data-tool="specimen"></script>
+  <script type="importmap">
+    { "imports": { "lit": "../../vendor/lit-core-3.3.3.min.js" } }
+  </script>
+</head>
+<body class="h-full flex flex-col">
+  <h1 class="suite-visually-hidden">Specimen Lab — interactive CSS property explorer</h1>
+
+  <css-studio-app class="flex-1 flex flex-col min-h-0"></css-studio-app>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

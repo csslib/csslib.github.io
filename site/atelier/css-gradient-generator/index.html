@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (C) 2026 Abhishek Sengar -->
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChromaFlow — Perceptual OKLCH Gradient Generator | Atelier</title>
+  <meta name="description" content="Compose mesh-like CSS gradients from spatial colour emitters, shape their influence with easing curves and export perceptually smooth OKLCH CSS." />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="canonical" href="https://csslib.github.io/site/atelier/css-gradient-generator/" />
+  <meta property="og:url" content="https://csslib.github.io/site/atelier/css-gradient-generator/" />
+  <link rel="icon" href="../suite/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../suite/styles/tokens.css" />
+  <link rel="stylesheet" href="../suite/styles/reset.css" />
+  <link rel="stylesheet" href="../suite/styles/utilities.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-states.css" />
+  <link rel="stylesheet" href="../suite/styles/utility-breakpoints.css" />
+  <link rel="stylesheet" href="../suite/suite.css" />
+  <link rel="stylesheet" href="../suite/styles/controls.css" />
+  <script src="../suite/suite.js" data-tool="chromaflow"></script>
+  <script type="importmap">
+    { "imports": { "lit": "../../vendor/lit-core-3.3.3.min.js" } }
+  </script>
+</head>
+<body class="min-h-screen text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+  <h1 class="suite-visually-hidden">ChromaFlow — perceptual OKLCH gradient generator</h1>
+
+  <gradient-orchestrator></gradient-orchestrator>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
